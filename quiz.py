@@ -507,7 +507,7 @@ def select_page(request: Request):
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="/static/icon-512.png">
-  <title>Pilih Akun</title>
+  <title>Altha dan Leia Quiz - Pilih Akun</title>
   <style>
     body {{
       margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
@@ -592,7 +592,7 @@ def practice_page(request: Request):
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="/static/icon-512.png">
-  <title>Latihan Matematika</title>
+  <title>Altha dan Leia Quiz - Latihan Matematika</title>
   <style>
     :root {{
       --bg: #070b14;
@@ -913,7 +913,7 @@ def stats_page(request: Request):
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Stats 7 Hari</title>
+  <title>Altha dan Leia Quiz - Stats 7 Hari</title>
   <style>
     :root{
       --bg:#070b14;
