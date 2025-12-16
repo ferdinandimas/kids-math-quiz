@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
 import os
 import random
 import sqlite3
@@ -458,6 +459,7 @@ def get_daily_recap(child: str, days: list[str]):
 
 
 app = FastAPI(title=APP_TITLE)
+app.mount("/static", StaticFiles(directory="."), name="static")
 
 
 @app.on_event("startup")
@@ -499,6 +501,12 @@ def select_page(request: Request):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/static/icon-512.png">
+  <meta name="theme-color" content="#070b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/static/icon-512.png">
   <title>Pilih Akun</title>
   <style>
     body {{
@@ -578,6 +586,12 @@ def practice_page(request: Request):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/static/icon-512.png">
+  <meta name="theme-color" content="#070b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="/static/icon-512.png">
   <title>Latihan Matematika</title>
   <style>
     :root {{
@@ -891,7 +905,12 @@ def stats_page(request: Request):
     html = """
 <!doctype html>
 <html>
-<head>
+<
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/static/icon-512.png">
+  <meta name="theme-color" content="#070b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Stats 7 Hari</title>
@@ -1277,3 +1296,22 @@ async def api_admin_clear(request: Request):
 
     clear_database()
     return JSONResponse({"ok": True, "message": "Database sudah dikosongkan."})
+
+
+@app.get("/manifest.json")
+def manifest():
+    return {
+        "name": "Kids Math Quiz",
+        "short_name": "Math Quiz",
+        "start_url": "/",
+        "display": "standalone",
+        "background_color": "#070b14",
+        "theme_color": "#070b14",
+        "icons": [
+            {
+                "src": "/static/icon-512.png",
+                "sizes": "512x512",
+                "type": "image/png"
+            }
+        ]
+    }
