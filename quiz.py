@@ -459,7 +459,7 @@ def get_daily_recap(child: str, days: list[str]):
 
 
 app = FastAPI(title=APP_TITLE)
-app.mount("/static", StaticFiles(directory="."), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @app.on_event("startup")
@@ -886,6 +886,10 @@ async function resetAccount() {{
   await loadSessionStats();
   await loadQuestion();
 }})();
+
+if ("serviceWorker" in navigator) {{
+  navigator.serviceWorker.register("/static/sw.js");
+}}
 </script>
 
 </body>
@@ -1140,6 +1144,10 @@ document.getElementById("clearBtn").addEventListener("click", async () => {
   if (data.ok) load();
 });
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/static/sw.js");
+}
+
 load();
 </script>
 </body>
@@ -1299,11 +1307,12 @@ async def api_admin_clear(request: Request):
 
 
 @app.get("/manifest.json")
+@app.get("/manifest.webmanifest")
 def manifest():
     return {
-        "name": "Kids Math Quiz",
-        "short_name": "Math Quiz",
-        "start_url": "/",
+        "name": "Altha dan Leia Quiz",
+        "short_name": "Altha dan Leia Quiz",
+        "start_url": "/select",
         "display": "standalone",
         "background_color": "#070b14",
         "theme_color": "#070b14",
@@ -1315,3 +1324,8 @@ def manifest():
             }
         ]
     }
+
+
+@app.get("/health")
+def health():
+    return {"ok": True}
