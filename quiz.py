@@ -109,12 +109,12 @@ def generate_bank_add_sub(
     def topping():
         mode = rng.random()
         if mode < 0.45:
-            return (rng.randint(0, 9), "+", rng.randint(0, 9))
+            return (rng.randint(1, 9), "+", rng.randint(1, 9))
         if mode < 0.70:
-            return (rng.randint(0, 9), "-", rng.randint(0, 9))
+            return (rng.randint(1, 9), "-", rng.randint(1, 9))
         if mode < 0.85:
-            return (rng.randint(10, 20), "+", rng.randint(0, 9))
-        return (rng.randint(10, 20), "-", rng.randint(0, 9))
+            return (rng.randint(10, 20), "+", rng.randint(1, 9))
+        return (rng.randint(10, 20), "-", rng.randint(1, 9))
 
     fill(max(0, target_size - len(out)), topping)
 
@@ -647,14 +647,6 @@ def practice_page(request: Request):
       display: flex; align-items: center; justify-content: center;
       font-size: 34px; font-weight: 900;
     }}
-    .msg {{
-      min-height: 22px;
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 25px;
-      margin: 0px 10px;
-      margin-top: 25px;
-    }}
     .pad {{
       background: var(--panel); border: 1px solid var(--border);
       border-radius: 14px; padding: 12px;
@@ -742,6 +734,38 @@ def practice_page(request: Request):
       <div class="bottom" style="margin-top:10px;">
         <button class="wide danger" onclick="resetAccount()">Ganti Akun</button>
         <button class="wide" onclick="nextQ()">Next</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="popup" style="
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  ">
+    <div id="popupCard" style="
+      background: #0f1730;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      width: min(340px, 92vw);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      border: 2px solid transparent;
+    ">
+    <div id="popupIcon" style="font-size:   56px;">🎉</div>
+      <div id="popupTitle" style="
+        font-size: 28px;
+        font-weight: 900;
+        margin-top: 10px;
+      ">
+        Benar!
+      </div>
+    <div id="popupText" style="margin-top: 8px;   font-size: 16px;">
+        + Rp {REWARD_PER_CORRECT}
       </div>
     </div>
   </div>
@@ -864,17 +888,32 @@ async function nextQ() {{
     return;
   }}
 
+  // if (data.correct) {{
+  //   setMsg("Benar! kamu dapat Rp {REWARD_PER_CORRECT}");
+  // }} else {{
+  //   setMsg("Salah. Jawaban benar: " + data.correct_answer);
+  // }}
+  
   if (data.correct) {{
-    setMsg("Benar! kamu dapat Rp {REWARD_PER_CORRECT}");
+    showPopup({{ correct: true }});
+  
+    setTimeout(() => {{
+      hidePopup();
+      locked = false;
+      loadQuestion();
+    }}, 1200);
+  
   }} else {{
-    setMsg("Salah. Jawaban benar: " + data.correct_answer);
+    showPopup({{ correct: false, correctAnswer: data.correct_answer }});
+  
+    setTimeout(() => {{
+      hidePopup();
+      locked = false;
+      loadQuestion();
+    }}, 1600);
   }}
 
   await loadSessionStats();
-
-  setTimeout(() => {{
-    loadQuestion();
-  }}, 1500);
 }}
 
 async function resetAccount() {{
@@ -890,6 +929,33 @@ async function resetAccount() {{
 if ("serviceWorker" in navigator) {{
   navigator.serviceWorker.register("/static/sw.js");
 }}
+
+function showPopup({{ correct, correctAnswer }}) {{
+  const p = document.getElementById("popup");
+  const card = document.getElementById("popupCard");
+  const icon = document.getElementById("popupIcon");
+  const title = document.getElementById("popupTitle");
+  const text = document.getElementById("popupText");
+
+  if (correct) {{
+    card.style.borderColor = "#4ade80";
+    icon.textContent = "🎉";
+    title.textContent = "Benar!";
+    text.textContent = "+ Rp {REWARD_PER_CORRECT}";
+  }} else {{
+    card.style.borderColor = "#f87171";
+    icon.textContent = "❌";
+    title.textContent = "Yah kamu salah";
+    text.textContent = "Jawaban yang benar: " + correctAnswer;
+  }}
+
+  p.style.display = "flex";
+}}
+
+function hidePopup() {{
+  document.getElementById("popup").style.display = "none";
+}}
+
 </script>
 
 </body>
