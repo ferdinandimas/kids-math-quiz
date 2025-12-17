@@ -1,0 +1,434 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/icon-512.png">
+    <meta name="theme-color" content="#070b14">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/static/icon-512.png">
+    <title>Altha dan Leia Quiz</title>
+    <style>
+        :root {
+            --bg: #070b14;
+            --panel: #0f1730;
+            --panel2: #101c3b;
+            --border: #21305b;
+            --text: #e9f0ff;
+            --muted: rgba(233, 240, 255, 0.75);
+        }
+
+        html, body {
+            touch-action: manipulation;
+            overscroll-behavior: none;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+            background: var(--bg);
+            color: var(--text);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .wrap {
+            height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+
+        .top {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .stat strong {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .question {
+            background: var(--panel2);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px;
+            display: grid;
+            grid-template-rows: auto auto auto;
+            align-content: start;
+            gap: 10px;
+        }
+
+        .prompt {
+            font-size: clamp(26px, 5vw, 46px);
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin: 25px 10px;
+        }
+
+        .answerbox {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 900;
+        }
+
+        .pad {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text);
+            height: min(12vh, 90px);
+            font-size: clamp(22px, 4vw, 34px);
+            font-weight: 900;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        button:active {
+            transform: scale(0.99);
+        }
+
+        .bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .wide {
+            height: min(10vh, 84px);
+            font-size: clamp(18px, 3.2vw, 26px);
+            background: rgba(80, 130, 255, 0.18);
+            border: 1px solid rgba(120, 170, 255, 0.30);
+        }
+
+        .danger {
+            background: rgba(255, 90, 90, 0.14);
+            border: 1px solid rgba(255, 120, 120, 0.26);
+        }
+
+        a {
+            color: rgba(180, 210, 255, 0.95);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top">
+        <div class="stat">
+            <div>Nama</div>
+            <strong id="childName">{{child}}</strong>
+            <div style="font-size:12px; margin-bottom:15px;">
+                Tingkat: <strong id="level">{{level}}</strong>
+            </div>
+            <a href="/stats">Lihat Statistik</a>
+        </div>
+        <div class="stat" style="text-align:right;">
+            <div>Hari ini</div>
+            <strong><span id="answered">{{answered_today}}</span> / {{DAILY_LIMIT}} soal</strong>
+            <div style="font-size:12px; color: var(--muted);">Benar: <span id="correct">{{correct_count}}</span> |
+                Hadiah: Rp <span
+                        id="earned">{{earned}}</span></div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="prompt" id="prompt">Memuat soal...</div>
+        <div class="answerbox" id="answerbox">-</div>
+        <div class="msg" id="msg"></div>
+    </div>
+
+    <div class="pad">
+        <div class="grid">
+            <button onclick="tap('1')">1</button>
+            <button onclick="tap('2')">2</button>
+            <button onclick="tap('3')">3</button>
+            <button onclick="tap('4')">4</button>
+            <button onclick="tap('5')">5</button>
+            <button onclick="tap('6')">6</button>
+            <button onclick="tap('7')">7</button>
+            <button onclick="tap('8')">8</button>
+            <button onclick="tap('9')">9</button>
+            <div class="pad-spacer"></div>
+            <button onclick="tap('0')">0</button>
+            <div class="pad-spacer"></div>
+        </div>
+
+        <div class="bottom" style="margin-top:10px;">
+            <button class="wide danger" onclick="resetAccount()">Ganti Akun</button>
+            <button class="wide" onclick="nextQ()">Next</button>
+        </div>
+    </div>
+</div>
+
+<div id="popup" style="
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  ">
+    <div id="popupCard" style="
+      background: #0f1730;
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      width: min(340px, 92vw);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      border: 2px solid transparent;
+    ">
+        <div id="popupIcon" style="font-size:   56px;">🎉</div>
+        <div id="popupTitle" style="
+        font-size: 28px;
+        font-weight: 900;
+        margin-top: 10px;
+      ">
+            Benar!
+        </div>
+        <div id="popupText" style="margin-top: 8px;   font-size: 16px;">
+            + Rp {REWARD_PER_CORRECT}
+        </div>
+    </div>
+</div>
+
+<script>
+    let currentQid = null;
+    let answerStr = "";
+    let locked = false;
+    let autoTimer = null;
+
+    function levelFromAccuracy(acc, answered7) {
+        // gating: minimal 50 soal dulu baru boleh naik tingkat
+        if ((answered7 ?? 0) < 50) return "Pemula";
+
+        if (acc >= 80) return "Mahir";
+        if (acc >= 60) return "Menengah";
+        return "Pemula";
+    }
+
+    function setMsg(t) {
+        document.getElementById("msg").textContent = t || "";
+    }
+
+    function renderAnswer() {
+        document.getElementById("answerbox").textContent = answerStr.length ? answerStr : "-";
+    }
+
+    function tap(d) {
+        if (locked) return;
+        if (answerStr.length >= 6) return;
+        answerStr += d;
+        renderAnswer();
+
+        // auto-check setelah berhenti input 600ms
+        if (autoTimer) clearTimeout(autoTimer);
+        autoTimer = setTimeout(() => {
+            // jangan submit kalau kosong
+            if (!answerStr.length) return;
+            nextQ(); // pakai existing flow, tidak bikin endpoint baru
+        }, 600);
+    }
+
+    function backspace() {
+        if (locked) return;
+        answerStr = answerStr.slice(0, -1);
+        renderAnswer();
+        if (autoTimer) clearTimeout(autoTimer);
+    }
+
+    function clearAll() {
+        if (locked) return;
+        answerStr = "";
+        renderAnswer();
+        if (autoTimer) clearTimeout(autoTimer);
+    }
+
+    async function loadSessionStats() {
+        const r = await fetch("/api/stats");
+        const data = await r.json();
+
+        document.getElementById("childName").textContent = data.child || "";
+        document.getElementById("answered").textContent = data.answered_count ?? 0;
+        document.getElementById("correct").textContent = data.correct_count ?? 0;
+        document.getElementById("earned").textContent = data.earned ?? 0;
+
+        // ambil akurasi 7 hari untuk level
+        if (data.recap7 && data.recap7.children && data.child) {
+            const recap = data.recap7.children[data.child];
+            const acc = recap?.totals?.accuracy_pct ?? 0;
+            const answered7 = recap?.totals?.answered_count ?? 0;
+            document.getElementById("level").textContent = levelFromAccuracy(acc, answered7);
+        }
+    }
+
+    async function loadQuestion() {
+        setMsg("");
+        answerStr = "";
+        renderAnswer();
+
+        const r = await fetch("/api/question");
+        const data = await r.json();
+
+        if (!data.ok) {
+            document.getElementById("prompt").textContent = data.message || "Tidak bisa ambil soal.";
+            locked = true;
+            return;
+        }
+
+        currentQid = data.qid;
+        document.getElementById("prompt").textContent = data.prompt;
+        locked = false;
+
+        await loadSessionStats();
+    }
+
+    async function nextQ() {
+        if (autoTimer) clearTimeout(autoTimer);
+        autoTimer = null;
+
+        if (locked) return;
+        if (!currentQid) return;
+
+        locked = true;
+
+        const payload = {
+            qid: currentQid,
+            answer: answerStr
+        };
+
+        const r = await fetch("/api/answer", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(payload)
+        });
+        const data = await r.json();
+
+        if (!data.ok) {
+            setMsg(data.message || "Ada masalah.");
+            locked = false;
+            return;
+        }
+
+        // if (data.correct) {
+        //   setMsg("Benar! kamu dapat Rp {REWARD_PER_CORRECT}");
+        // } else {
+        //   setMsg("Salah. Jawaban benar: " + data.correct_answer);
+        // }
+
+        if (data.correct) {
+            showPopup({correct: true});
+
+            setTimeout(() => {
+                hidePopup();
+                locked = false;
+                loadQuestion();
+            }, 1200);
+
+        } else {
+            showPopup({correct: false, correctAnswer: data.correct_answer});
+
+            setTimeout(() => {
+                hidePopup();
+                locked = false;
+                loadQuestion();
+            }, 1600);
+        }
+
+        await loadSessionStats();
+    }
+
+    async function resetAccount() {
+        await fetch("/api/logout", {method: "POST"});
+        window.location.href = "/home";
+    }
+
+    (async function init() {
+        await loadSessionStats();
+        await loadQuestion();
+    })();
+
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/static/sw.js");
+    }
+
+    function showPopup({correct, correctAnswer}) {
+        const p = document.getElementById("popup");
+        const card = document.getElementById("popupCard");
+        const icon = document.getElementById("popupIcon");
+        const title = document.getElementById("popupTitle");
+        const text = document.getElementById("popupText");
+
+        if (correct) {
+            card.style.borderColor = "#4ade80";
+            icon.textContent = "🎉";
+            title.textContent = "Benar!";
+            text.textContent = "+ Rp {{REWARD_PER_CORRECT}}";
+        } else {
+            card.style.borderColor = "#f87171";
+            icon.textContent = "❌";
+            title.textContent = "Yah kamu salah";
+            text.textContent = "Jawaban yang benar: " + correctAnswer;
+        }
+
+        p.style.display = "flex";
+    }
+
+    function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    document.addEventListener('gesturestart', function (e) {
+        e.preventDefault();
+    });
+
+</script>
+
+</body>
+</html>

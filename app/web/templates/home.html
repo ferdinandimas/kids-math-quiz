@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/icon-512.png">
+    <meta name="theme-color" content="#070b14">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/static/icon-512.png">
+    <title>Altha dan Leia Quiz</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+            background: #0b1220;
+            color: #e8eefc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            width: min(520px, 92vw);
+            background: #121b2f;
+            border: 1px solid #243055;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            margin: 0px 20px;
+        }
+
+        h1 {
+            margin: 0 0 12px 0;
+            font-size: 22px;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            opacity: 0.9;
+        }
+
+        .btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            width: 100%;
+            height: 90px;
+            border-radius: 16px;
+            border: 1px solid #2c3a66;
+            background: #1a2543;
+            color: #e8eefc;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        button:active {
+            transform: scale(0.99);
+        }
+
+        .note {
+            margin-top: 14px;
+            font-size: 13px;
+            opacity: 0.75;
+        }
+
+        .links {
+            margin-top: 14px;
+            font-size: 13px;
+            opacity: 0.85;
+            display: flex;
+            gap: 12px;
+        }
+
+        .links a {
+            color: #b8d1ff;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Pilih akun dulu</h1>
+    <p>Siapa yang mau latihan hari ini?</p>
+    <div class="btns">
+        <a href="/home/althafandra">
+            <button type="button">Althafandra</button>
+        </a>
+        <a href="/home/alleia">
+            <button type="button">Alleia</button>
+        </a>
+    </div>
+    <div class="note">Batas {{DAILY_LIMIT}} soal per hari per anak. Reward Rp {{REWARD_PER_CORRECT}} per jawaban benar.
+    </div>
+    <div class="links">
+        <a href="/stats">Lihat Statistik 7 Hari</a>
+    </div>
+</div>
+</body>
+</html>

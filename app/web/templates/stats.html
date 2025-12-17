@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/static/icon-512.png">
+<meta name="theme-color" content="#070b14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Altha dan Leia Quiz</title>
+<style>
+    :root {
+        --bg: #070b14;
+        --panel: #0f1730;
+        --panel2: #101c3b;
+        --border: #21305b;
+        --text: #e9f0ff;
+        --muted: rgba(233, 240, 255, 0.75);
+    }
+
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+        align-items: center;
+    }
+
+    a {
+        color: rgba(180, 210, 255, 0.95);
+        text-decoration: none;
+        font-weight: 800;
+    }
+
+    .wrap {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+        .wrap {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .card {
+        background: var(--panel2);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px;
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10px;
+    }
+
+    .title h2 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .totals {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .mini {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        border-radius: 12px;
+        padding: 10px;
+    }
+
+    .mini .k {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 700;
+    }
+
+    .mini .v {
+        margin-top: 4px;
+        font-size: 16px;
+        font-weight: 900;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        font-size: 13px;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    th {
+        color: var(--muted);
+        font-weight: 900;
+    }
+
+    .muted {
+        color: var(--muted);
+    }
+
+    .right {
+        text-align: right;
+    }
+</style>
+</head>
+<body>
+<div class="top">
+    <div>
+        <div style="font-weight:900; font-size:18px;">Rekap 7 Hari Terakhir</div>
+        <div class="muted" id="rangeText">Memuat...</div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:center;">
+        <a href="/home">Pilih Akun</a>
+        <a href="/quiz">Kembali ke Quiz</a>
+        <button id="clearBtn" style="
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,120,120,0.26);
+        background: rgba(255,90,90,0.14);
+        color: var(--text);
+        font-weight: 900;
+        cursor: pointer;
+        padding: 0 12px;
+      ">Clear DB
+        </button>
+    </div>
+</div>
+
+<div class="wrap">
+    <div class="card" id="card_althafandra">
+        <div class="title">
+            <h2>Althafandra</h2>
+            <div class="muted" id="updated_a"></div>
+        </div>
+
+        <div class="totals">
+            <div class="mini">
+                <div class="k">Total Soal</div>
+                <div class="v" id="a_total_answered">0</div>
+            </div>
+            <div class="mini">
+                <div class="k">Total Benar</div>
+                <div class="v" id="a_total_correct">0</div>
+            </div>
+            <div class="mini">
+                <div class="k">Akurasi</div>
+                <div class="v" id="a_total_acc">0%</div>
+            </div>
+            <div class="mini">
+                <div class="k">Total Hadiah</div>
+                <div class="v" id="a_total_earned">Rp 0</div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th class="right">Soal</th>
+                <th class="right">Benar</th>
+                <th class="right">Akurasi</th>
+                <th class="right">Hadiah</th>
+            </tr>
+            </thead>
+            <tbody id="a_rows"></tbody>
+        </table>
+    </div>
+
+    <div class="card" id="card_alleia">
+        <div class="title">
+            <h2>Alleia</h2>
+            <div class="muted" id="updated_b"></div>
+        </div>
+
+        <div class="totals">
+            <div class="mini">
+                <div class="k">Total Soal</div>
+                <div class="v" id="b_total_answered">0</div>
+            </div>
+            <div class="mini">
+                <div class="k">Total Benar</div>
+                <div class="v" id="b_total_correct">0</div>
+            </div>
+            <div class="mini">
+                <div class="k">Akurasi</div>
+                <div class="v" id="b_total_acc">0%</div>
+            </div>
+            <div class="mini">
+                <div class="k">Total Hadiah</div>
+                <div class="v" id="b_total_earned">Rp 0</div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th class="right">Soal</th>
+                <th class="right">Benar</th>
+                <th class="right">Akurasi</th>
+                <th class="right">Hadiah</th>
+            </tr>
+            </thead>
+            <tbody id="b_rows"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function tdRight(v) {
+        return `<td class="right">${v}</td>`;
+    }
+
+    function renderChild(prefix, recap) {
+        const t = recap.totals || {};
+        document.getElementById(prefix + "_total_answered").textContent = t.answered_count ?? 0;
+        document.getElementById(prefix + "_total_correct").textContent = t.correct_count ?? 0;
+        document.getElementById(prefix + "_total_acc").textContent = (t.accuracy_pct ?? 0) + "%";
+        document.getElementById(prefix + "_total_earned").textContent = "Rp " + (t.earned ?? 0);
+
+        const rowsEl = document.getElementById(prefix + "_rows");
+        rowsEl.innerHTML = "";
+
+        (recap.days || []).forEach(d => {
+            const tr = document.createElement("tr");
+            tr.innerHTML =
+                `<td>${d.day}</td>` +
+                tdRight(d.answered_count ?? 0) +
+                tdRight(d.correct_count ?? 0) +
+                tdRight((d.accuracy_pct ?? 0) + "%") +
+                tdRight("Rp " + (d.earned ?? 0));
+            rowsEl.appendChild(tr);
+        });
+    }
+
+    async function load() {
+        const r = await fetch("/api/stats");
+        const data = await r.json();
+        if (!data.ok) {
+            document.getElementById("rangeText").textContent = data.message || "Gagal memuat.";
+            return;
+        }
+
+        if (data.recap7 && data.recap7.range) {
+            document.getElementById("rangeText").textContent =
+                "Rentan: " + data.recap7.range.start + " sampai " + data.recap7.range.end;
+        } else {
+            document.getElementById("rangeText").textContent = "7 hari terakhir";
+        }
+
+        const ra = (data.recap7 && data.recap7.children && data.recap7.children.althafandra) ? data.recap7.children.althafandra : null;
+        const rb = (data.recap7 && data.recap7.children && data.recap7.children.alleia) ? data.recap7.children.alleia : null;
+
+        if (ra) renderChild("a", ra);
+        if (rb) renderChild("b", rb);
+
+        const ts = (data.recap7 && data.recap7.generated_at) ? data.recap7.generated_at : "";
+        document.getElementById("updated_a").textContent = ts ? ("Updated: " + ts) : "";
+        document.getElementById("updated_b").textContent = ts ? ("Updated: " + ts) : "";
+    }
+
+    document.getElementById("clearBtn").addEventListener("click", async () => {
+        const pwd = prompt("Masukkan password untuk clear database:");
+        if (!pwd) return;
+
+        const ok = confirm("Yakin mau hapus SEMUA data quiz dan statistik?");
+        if (!ok) return;
+
+        const r = await fetch("/api/admin/clear", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({password: pwd})
+        });
+
+        const data = await r.json();
+        alert(data.message || (data.ok ? "OK" : "Gagal"));
+
+        if (data.ok) load();
+    });
+
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/static/sw.js");
+    }
+
+    load();
+</script>
+</body>
+</html>
