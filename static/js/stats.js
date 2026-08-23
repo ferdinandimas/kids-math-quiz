@@ -1,5 +1,42 @@
-function tdRight(value) {
-    return `<td class="right">${value}</td>`;
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function svgNode(name, attrs = {}, text = "") {
+    const node = document.createElementNS(SVG_NS, name);
+    Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
+    if (text) node.textContent = text;
+    return node;
+}
+
+function formatUpdate(value) {
+    return value ? `Updated: ${value.replace("T", " ").replace(/\.\d+$/, "")}` : "";
+}
+
+function renderChart(prefix, days) {
+    const target = document.getElementById(`${prefix}_chart`);
+    target.replaceChildren();
+    const values = days.map((day) => Number(day.accuracy_pct || 0));
+    const labels = days.map((day) => String(day.day || "").slice(5).split("-").reverse().join("/"));
+    const svg = svgNode("svg", { viewBox: "0 0 860 130", role: "img", "aria-label": "Grafik akurasi tujuh hari" });
+    const left = 58, right = 16, top = 10, bottom = 31, width = 860 - left - right, height = 130 - top - bottom;
+    const y = (value) => top + height - (Math.max(0, Math.min(100, value)) / 100 * height);
+    const x = (index) => left + (values.length <= 1 ? width / 2 : index * width / (values.length - 1));
+    [100, 50, 0].forEach((value) => {
+        const lineY = y(value);
+        svg.append(svgNode("line", { x1: left, y1: lineY, x2: 860 - right, y2: lineY, class: value === 0 ? "chart-axis" : "chart-grid" }));
+        svg.append(svgNode("text", { x: left - 12, y: lineY + 5, "text-anchor": "end", class: "chart-label" }, `${value}%`));
+    });
+    svg.append(svgNode("line", { x1: left, y1: top, x2: left, y2: y(0), class: "chart-axis" }));
+    if (values.length) {
+        const path = values.map((value, index) => `${index ? "L" : "M"}${x(index)} ${y(value)}`).join(" ");
+        svg.append(svgNode("path", { d: path, class: "chart-line" }));
+        values.forEach((value, index) => {
+            svg.append(svgNode("circle", { cx: x(index), cy: y(value), r: index === values.length - 1 ? 5 : 4, class: "chart-dot" }));
+            svg.append(svgNode("text", { x: x(index), y: 123, "text-anchor": "middle", class: "chart-label" }, labels[index]));
+        });
+        const last = values.length - 1;
+        svg.append(svgNode("text", { x: x(last) - 4, y: Math.max(15, y(values[last]) - 13), "text-anchor": "end", class: "chart-value" }, `${values[last]}%`));
+    }
+    target.append(svg);
 }
 
 function renderChild(prefix, recap) {
@@ -8,57 +45,39 @@ function renderChild(prefix, recap) {
     document.getElementById(`${prefix}_total_correct`).textContent = totals.correct_count ?? 0;
     document.getElementById(`${prefix}_total_acc`).textContent = `${totals.accuracy_pct ?? 0}%`;
     document.getElementById(`${prefix}_total_earned`).textContent = `Rp ${totals.earned ?? 0}`;
-
+    const days = recap.days || [];
+    renderChart(prefix, days);
     const rows = document.getElementById(`${prefix}_rows`);
-    rows.innerHTML = "";
-
-    (recap.days || []).forEach((day) => {
+    rows.replaceChildren();
+    days.forEach((day) => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${day.day}</td>${tdRight(day.answered_count ?? 0)}${tdRight(day.correct_count ?? 0)}${tdRight(`${day.accuracy_pct ?? 0}%`)}${tdRight(`Rp ${day.earned ?? 0}`)}`;
-        rows.appendChild(row);
+        [day.day, day.answered_count ?? 0, day.correct_count ?? 0, `${day.accuracy_pct ?? 0}%`, `Rp ${day.earned ?? 0}`].forEach((value) => {
+            const cell = document.createElement("td"); cell.textContent = value; row.append(cell);
+        });
+        rows.append(row);
     });
 }
 
 async function load() {
     const response = await fetch("/api/stats");
     const data = await response.json();
-
-    if (!data.ok) {
-        document.getElementById("rangeText").textContent = data.message || "Gagal memuat.";
-        return;
-    }
-
-    const range = data.recap7?.range;
-    document.getElementById("rangeText").textContent = range
-        ? `Rentan: ${range.start} sampai ${range.end}`
-        : "7 hari terakhir";
-
-    const children = data.recap7?.children || {};
-    if (children.althafandra) renderChild("a", children.althafandra);
-    if (children.alleia) renderChild("b", children.alleia);
-
-    const timestamp = data.recap7?.generated_at || "";
-    document.getElementById("updated_a").textContent = timestamp ? `Updated: ${timestamp}` : "";
-    document.getElementById("updated_b").textContent = timestamp ? `Updated: ${timestamp}` : "";
+    if (!data.ok) throw new Error(data.error || "Gagal memuat statistik");
+    const range = data.recap7.range;
+    document.getElementById("rangeText").innerHTML = `Rentan: <span class="range-date">${range.start}</span> sampai <span class="range-date">${range.end}</span>`;
+    renderChild("a", data.recap7.children.althafandra);
+    renderChild("b", data.recap7.children.alleia);
+    const updated = formatUpdate(data.recap7.generated_at);
+    document.getElementById("updated_a").textContent = updated;
+    document.getElementById("updated_b").textContent = updated;
 }
 
 document.getElementById("clearBtn").addEventListener("click", async () => {
-    const password = prompt("Masukkan password untuk clear database:");
-    if (!password || !confirm("Yakin mau hapus SEMUA data quiz dan statistik?")) return;
-
-    const response = await fetch("/api/admin/clear", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({password}),
-    });
+    const typed = prompt("Ketik RESET untuk menghapus semua riwayat statistik.");
+    if (typed !== "RESET") return;
+    const response = await fetch("/api/admin/reset", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ confirm: true }) });
     const data = await response.json();
-    alert(data.message || (data.ok ? "OK" : "Gagal"));
-
-    if (data.ok) load();
+    if (!data.ok) return alert(data.error || "Gagal menghapus data");
+    await load();
 });
 
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/static/sw.js");
-}
-
-load();
+load().catch((error) => { document.getElementById("rangeText").textContent = error.message; });

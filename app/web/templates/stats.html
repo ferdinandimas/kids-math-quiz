@@ -6,33 +6,75 @@
 
 {% block body_class %}stats-page{% endblock %}
 
+{% macro action_link(class_name, href, image, label) %}
+<a class="stats-action {{ class_name }}" href="{{ href }}">
+    <img src="{{ image }}" alt="" aria-hidden="true">
+    <span>{{ label }}</span>
+</a>
+{% endmacro %}
+
 {% macro stat_card(prefix, name) %}
 <section class="stats-card" id="card_{{ prefix }}">
-    <div class="stats-card-title"><h2>{{ name }}</h2><div class="muted" id="updated_{{ prefix }}"></div></div>
+    <header class="stats-card-title">
+        <h2>{{ name }}</h2>
+        <div class="stats-updated" id="updated_{{ prefix }}"></div>
+    </header>
+
     <div class="stats-totals">
-        <div class="stats-mini"><div class="stats-mini-key">Total Soal</div><div class="stats-mini-value" id="{{ prefix }}_total_answered">0</div></div>
-        <div class="stats-mini"><div class="stats-mini-key">Total Benar</div><div class="stats-mini-value" id="{{ prefix }}_total_correct">0</div></div>
-        <div class="stats-mini"><div class="stats-mini-key">Akurasi</div><div class="stats-mini-value" id="{{ prefix }}_total_acc">0%</div></div>
-        <div class="stats-mini"><div class="stats-mini-key">Total Hadiah</div><div class="stats-mini-value" id="{{ prefix }}_total_earned">Rp 0</div></div>
+        <article class="stats-mini stats-mini-blue">
+            <div class="stats-mini-key"><img src="/static/images/stats-document-icon.png" alt="">Total Soal</div>
+            <div class="stats-mini-value" id="{{ prefix }}_total_answered">0</div>
+        </article>
+        <article class="stats-mini stats-mini-purple">
+            <div class="stats-mini-key"><img src="/static/images/stats-check-icon.png" alt="">Total Benar</div>
+            <div class="stats-mini-value" id="{{ prefix }}_total_correct">0</div>
+        </article>
+        <article class="stats-mini stats-mini-green">
+            <div class="stats-mini-key"><img src="/static/images/stats-target-icon.png" alt="">Akurasi</div>
+            <div class="stats-mini-value" id="{{ prefix }}_total_acc">0%</div>
+        </article>
+        <article class="stats-mini stats-mini-gold">
+            <div class="stats-mini-key"><img src="/static/images/stats-gift-icon.png" alt="">Total Hadiah</div>
+            <div class="stats-mini-value" id="{{ prefix }}_total_earned">Rp 0</div>
+        </article>
     </div>
-    <table class="stats-table">
-        <thead><tr><th>Tanggal</th><th class="right">Soal</th><th class="right">Benar</th><th class="right">Akurasi</th><th class="right">Hadiah</th></tr></thead>
-        <tbody id="{{ prefix }}_rows"></tbody>
-    </table>
+
+    <section class="stats-performance" aria-label="Performa 7 Hari">
+        <h3>Performa 7 Hari</h3>
+        <div class="performance-chart" id="{{ prefix }}_chart"></div>
+    </section>
+
+    <div class="stats-table-wrap">
+        <table class="stats-table">
+            <thead><tr><th>Tanggal</th><th>Soal</th><th>Benar</th><th>Akurasi</th><th>Hadiah</th></tr></thead>
+            <tbody id="{{ prefix }}_rows"></tbody>
+        </table>
+    </div>
 </section>
 {% endmacro %}
 
 {% block content %}
-<header class="stats-top">
-    <div><div class="stats-heading">Rekap 7 Hari Terakhir</div><div class="muted" id="rangeText">Memuat...</div></div>
-    <nav class="stats-links">
-        <a href="/home">Pilih Akun</a><a href="/quiz">Kembali ke Quiz</a>
-        <button class="clear-button" id="clearBtn" type="button">Clear DB</button>
+<main class="stats-shell">
+    <header class="stats-hero">
+        <a class="stats-back" href="/home" aria-label="Kembali ke beranda"><img src="/static/images/stats-back-icon.png" alt=""></a>
+        <div class="stats-hero-copy">
+            <h1>Rekap 7 Hari Terakhir</h1>
+            <p id="rangeText">Memuat...</p>
+        </div>
+    </header>
+
+    <nav class="stats-actions" aria-label="Navigasi statistik">
+        {{ action_link('stats-action-account', '/home', '/static/images/stats-account-icon.png', 'Pilih Akun') }}
+        {{ action_link('stats-action-quiz', '/quiz', '/static/images/stats-back-icon.png', 'Kembali ke Quiz') }}
+        <button class="stats-action stats-action-clear" id="clearBtn" type="button">
+            <img src="/static/images/stats-trash-icon.png" alt="" aria-hidden="true"><span>Clear DB</span>
+        </button>
     </nav>
-</header>
-<main class="stats-wrap">
-    {{ stat_card('a', 'Althafandra') }}
-    {{ stat_card('b', 'Alleia') }}
+
+    <div class="stats-wrap">
+        {{ stat_card('a', 'Althafandra') }}
+        {{ stat_card('b', 'Alleia') }}
+    </div>
 </main>
 {% endblock %}
 
