@@ -128,7 +128,7 @@ async function nextQ(force = false) {
     const response = await fetch("/api/answer", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({qid: currentQid, answer: answerStr}),
+        body: JSON.stringify({qid: currentQid, answer: answerStr, quiz_type: quizType}),
     });
     const data = await response.json();
 

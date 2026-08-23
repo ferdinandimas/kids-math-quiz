@@ -217,8 +217,10 @@ def build_router(
         body = await request.json()
         qid = (body.get("qid") or "").strip()
         ans = (body.get("answer") or "").strip()
+        current_quiz_type = (body.get("quiz_type") or "").strip().lower()
+        if current_quiz_type not in {"math", "knowledge"}:
+            return JSONResponse({"ok": False, "message": "Jenis kuis tidak dikenal."}, status_code=400)
 
-        current_quiz_type = stats.get("current_quiz_type") or "math"
         active_qid = session_svc.get_current_qid(sess, child, current_quiz_type)
         if not active_qid or qid != active_qid:
             return JSONResponse({"ok": False, "message": "Soal tidak sinkron. Klik Next lagi."}, status_code=400)
