@@ -7,7 +7,7 @@
 {% block body_class %}quiz-page{% endblock %}
 
 {% block content %}
-<main class="quiz-dashboard profile-theme-{{ 'purple' if child == 'alleia' else 'blue' }}" data-reward-per-correct="{{ REWARD_PER_CORRECT }}" data-daily-limit="{{ DAILY_LIMIT }}">
+<main class="quiz-dashboard profile-theme-{{ 'purple' if child == 'alleia' else 'blue' }}" data-reward-per-correct="{{ REWARD_PER_CORRECT }}" data-daily-limit="{{ DAILY_LIMIT }}" data-quiz-type="{{ quiz_type }}">
     <header class="quiz-header">
         <div class="learner-summary">
             <div class="learner-avatar">
@@ -39,14 +39,14 @@
         </section>
     </header>
 
-    <section class="quiz-workspace">
+    <section class="quiz-workspace{% if quiz_type == 'knowledge' %} is-knowledge{% endif %}">
         <nav class="quiz-tabs" aria-label="Jenis kuis">
-            <a class="quiz-tab is-active" href="/quiz"><img class="math-tab-icon" src="/static/images/mathematics-tab-icon.png" alt=""> Matematika</a>
-            <span class="quiz-tab"><img class="knowledge-tab-icon" src="/static/images/general-knowledge-tab-icon.png" alt=""> Pengetahuan Umum SD</span>
+            <a class="quiz-tab{% if quiz_type == 'math' %} is-active{% endif %}" href="/quiz/math"><img class="math-tab-icon" src="/static/images/mathematics-tab-icon.png" alt=""> Matematika</a>
+            <a class="quiz-tab{% if quiz_type == 'knowledge' %} is-active{% endif %}" href="/quiz/knowledge"><img class="knowledge-tab-icon" src="/static/images/general-knowledge-tab-icon.png" alt=""> Pengetahuan Umum SD</a>
             <span class="quiz-tab quiz-tab-disabled"><span aria-hidden="true">•••</span> Lainnya</span>
         </nav>
 
-        <section class="quiz-question" aria-live="polite">
+        <section class="quiz-question{% if quiz_type == 'knowledge' %} knowledge-question{% endif %}" aria-live="polite">
             <div class="question-progress">
                 <strong id="questionProgress">Soal {{ answered_today + 1 }} dari {{ DAILY_LIMIT }}</strong>
                 <span class="progress-track"><span id="progressFill"></span></span>
@@ -57,17 +57,24 @@
                 <img src="/static/images/owl-tutor.png" alt="">
             </div>
             <div class="quiz-prompt" id="prompt">Memuat soal...</div>
+            {% if quiz_type == 'knowledge' %}
+            <div class="knowledge-options" id="knowledgeOptions" role="group" aria-label="Pilihan jawaban"></div>
+            <div class="quiz-help"><span aria-hidden="true">💡</span> Pilih jawaban yang menurutmu benar ya!</div>
+            {% else %}
             <div class="quiz-answer" id="answerbox">-</div>
             <div class="quiz-help"><span aria-hidden="true">💡</span> Pilih jawaban yang menurutmu benar ya!</div>
+            {% endif %}
             <div class="quiz-message" id="msg"></div>
         </section>
 
+        {% if quiz_type == 'math' %}
         <section class="quiz-pad" aria-label="Keypad jawaban">
             <div class="keypad-grid">
                 {% for digit in range(1, 10) %}<button type="button" onclick="tap('{{ digit }}')">{{ digit }}</button>{% endfor %}
                 <span></span><button type="button" onclick="tap('0')">0</button><span></span>
             </div>
         </section>
+        {% endif %}
         <img class="school-doodle-image doodle-ruler-image" src="/static/images/school-doodle-ruler.png" alt="" aria-hidden="true">
         <img class="school-doodle-image doodle-notebook-image" src="/static/images/school-doodle-notebook.png" alt="" aria-hidden="true">
         <img class="school-doodle-image doodle-plane-image" src="/static/images/school-doodle-plane.png" alt="" aria-hidden="true">
@@ -76,9 +83,8 @@
         <img class="school-doodle-image doodle-plane-middle" src="/static/images/school-doodle-plane.png" alt="" aria-hidden="true">
         <img class="school-doodle-image doodle-ruler-middle" src="/static/images/school-doodle-ruler.png" alt="" aria-hidden="true">
 
-        <div class="quiz-actions">
+        <div class="quiz-actions{% if quiz_type == 'knowledge' %} knowledge-actions{% endif %}">
             <button class="danger" type="button" onclick="resetAccount()"><img class="reset-account-icon" src="/static/images/reset-account-icon.png" alt="" aria-hidden="true"> Ganti Akun</button>
-            <button type="button" onclick="nextQ()">Next <img class="next-icon" src="/static/images/next-icon.png" alt="" aria-hidden="true"></button>
         </div>
     </section>
 </main>

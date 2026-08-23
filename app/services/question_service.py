@@ -1,14 +1,19 @@
 import random
 from datetime import date
-from app.config import DAILY_LIMIT, REWARD_PER_CORRECT
+from app.config import DAILY_LIMIT
+from app.domain.question_bank import MathBankSpec, build_daily_knowledge_bank, build_daily_math_bank
 from app.services.stats_service import StatsService
 
 class QuestionService:
-    def __init__(self, stats: StatsService, bank_v1: list[dict], bank_v2: list[dict], q_by_id: dict):
+    def __init__(
+        self,
+        stats: StatsService,
+        math_specs_by_child: dict[str, MathBankSpec],
+        knowledge_bank: list[dict],
+    ):
         self.stats = stats
-        self.bank_v1 = bank_v1
-        self.bank_v2 = bank_v2
-        self.q_by_id = q_by_id
+        self.math_specs_by_child = math_specs_by_child
+        self.knowledge_bank = knowledge_bank
 
     @staticmethod
     def today_str():
@@ -53,38 +58,95 @@ class QuestionService:
             return random.choice(med)
         return random.choice(easy or med or bank)
 
-    def resolve_bank_for_child(self, child: str):
-        if child == "alleia":
-            return self.bank_v1, 1
-        if child == "althafandra":
-            return self.bank_v2, 2
-        return None, None
+    def build_daily_bank(self, child: str, day: str, quiz_type: str) -> tuple[list[dict] | None, int | str | None]:
+        if quiz_type == "knowledge":
+            return build_daily_knowledge_bank(self.knowledge_bank, day, child), "knowledge"
 
-    def check_daily_limit(self, child: str):
+        spec = self.math_specs_by_child.get(child)
+        if not spec:
+            return None, None
+        return build_daily_math_bank(spec, day, child), spec.version
+
+    def get_daily_bank(self, child: str, day: str, quiz_type: str) -> tuple[list[dict] | None, int | str | None]:
+        self.stats.repo.cleanup_expired_question_data(day)
+        bank = self.stats.repo.get_daily_question_bank(child, day, quiz_type)
+        if bank is not None:
+            version = "knowledge" if quiz_type == "knowledge" else self.math_specs_by_child[child].version
+            return bank, version
+
+        generated_bank, version = self.build_daily_bank(child, day, quiz_type)
+        if not generated_bank:
+            return None, None
+
+        self.stats.repo.create_daily_question_bank(child, day, quiz_type, generated_bank)
+        # Another request may have inserted the same daily snapshot first.
+        return self.stats.repo.get_daily_question_bank(child, day, quiz_type), version
+
+    @staticmethod
+    def quota_cost(quiz_type: str) -> int:
+        return 2 if quiz_type == "knowledge" else 1
+
+    def check_daily_limit(self, child: str, quiz_type: str = "math"):
         today = self.today_str()
         recap = self.stats.get_daily_recap(child, [today])
         answered_today = int(recap["days"][0].get("answered_count", 0) or 0)
-        return answered_today < DAILY_LIMIT, answered_today
+        cost = self.quota_cost(quiz_type)
+        return answered_today + cost <= DAILY_LIMIT, answered_today
 
-    def get_question_payload(self, session_id: str, child: str):
-        bank, qver = self.resolve_bank_for_child(child)
-        if not bank:
-            return {"ok": False, "message": "Akun tidak dikenal."}, 400
+    @staticmethod
+    def _payload_for_question(question: dict, version: int | str | None, quiz_type: str) -> dict:
+        """Build the client payload without reserving or counting a question again."""
+        payload = {
+            "ok": True,
+            "qid": question["id"],
+            "prompt": question["prompt"],
+            "version": version,
+            "type": quiz_type,
+        }
+        if quiz_type == "knowledge":
+            payload["options"] = question["options"]
+            payload["reward"] = question["reward"]
+        return payload
 
-        ok, answered_today = self.check_daily_limit(child)
+    def get_existing_question_payload(self, child: str, quiz_type: str, question_id: str):
+        """Return an unfinished current question from today's persisted bank, if valid."""
+        bank, version = self.get_daily_bank(child, self.today_str(), quiz_type)
+        question = next((item for item in bank or [] if item["id"] == question_id), None)
+        return self._payload_for_question(question, version, quiz_type) if question else None
+
+    def get_question_payload(self, session_id: str, child: str, quiz_type: str = "math"):
+        ok, answered_today = self.check_daily_limit(child, quiz_type)
         if not ok:
             return {"ok": False, "message": f"Batas hari ini sudah tercapai ({DAILY_LIMIT} soal). Besok lanjut ya."}, 200
 
-        q = self.pick_adaptive(child, bank)
+        today = self.today_str()
+        bank, qver = self.get_daily_bank(child, today, quiz_type)
+        if not bank:
+            return {"ok": False, "message": "Akun tidak dikenal."}, 400
+
+        served_ids = self.stats.repo.select_served_question_ids(child, today, quiz_type)
+        available_questions = [question for question in bank if question["id"] not in served_ids]
+        if not available_questions:
+            return {"ok": False, "message": "Semua soal untuk kuis ini hari ini sudah ditampilkan. Besok lanjut ya."}, 200
+
+        q = self.pick_adaptive(child, available_questions)
         qid = q["id"]
-        q_full = self.q_by_id.get(qid, q)
 
-        return {"ok": True, "qid": qid, "prompt": q_full["prompt"], "version": qver}, 200
+        return self._payload_for_question(q, qver, quiz_type), 200
 
-    def evaluate_answer(self, qid: str, ans_str: str):
-        q = self.q_by_id.get(qid)
+    def reserve_question(self, child: str, quiz_type: str, question_id: str) -> bool:
+        return self.stats.repo.reserve_question(child, self.today_str(), quiz_type, question_id)
+
+    def evaluate_answer(self, child: str, quiz_type: str, qid: str, ans_str: str):
+        bank, _ = self.get_daily_bank(child, self.today_str(), quiz_type)
+        q = next((question for question in bank or [] if question["id"] == qid), None)
         if not q:
             return None, None, False
+
+        if q.get("type") == "knowledge":
+            answer_id = str(q["answer"])
+            correct_option = next(option for option in q["options"] if option["id"] == answer_id)
+            return q, correct_option["text"], ans_str.upper() == answer_id
 
         try:
             user_val = int(ans_str) if ans_str.strip() != "" else None

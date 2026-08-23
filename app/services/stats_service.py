@@ -60,10 +60,10 @@ class StatsService:
         self.repo.inc_session_served(session_id)
         self.repo.inc_daily_served(child, day)
 
-    def inc_answered(self, session_id: str, child: str, day: str):
+    def inc_answered(self, session_id: str, child: str, day: str, amount: int = 1):
         self.upsert_daily(child, day)
-        self.repo.inc_session_answered(session_id)
-        self.repo.inc_daily_answered(child, day)
+        self.repo.inc_session_answered(session_id, amount)
+        self.repo.inc_daily_answered(child, day, amount)
 
     def mark_correct(self, session_id: str, child: str, day: str, reward: int):
         self.upsert_daily(child, day)

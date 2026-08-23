@@ -7,6 +7,8 @@ let popupTimer = null;
 const quizDashboard = document.querySelector("[data-reward-per-correct]");
 const rewardPerCorrect = quizDashboard.dataset.rewardPerCorrect;
 const dailyLimit = Number(quizDashboard.dataset.dailyLimit);
+const quizType = quizDashboard.dataset.quizType || "math";
+const isKnowledgeQuiz = quizType === "knowledge";
 
 function levelFromAccuracy(accuracy, answered) {
     if ((answered ?? 0) < 50) return "Pemula";
@@ -20,11 +22,12 @@ function setMsg(text) {
 }
 
 function renderAnswer() {
-    document.getElementById("answerbox").textContent = answerStr.length ? answerStr : "-";
+    const answerBox = document.getElementById("answerbox");
+    if (answerBox) answerBox.textContent = answerStr.length ? answerStr : "-";
 }
 
 function tap(digit) {
-    if (locked || answerStr.length >= 6) return;
+    if (isKnowledgeQuiz || locked || answerStr.length >= 6) return;
 
     answerStr += digit;
     renderAnswer();
@@ -33,6 +36,42 @@ function tap(digit) {
     autoTimer = setTimeout(() => {
         if (answerStr.length) nextQ();
     }, 600);
+}
+
+function renderKnowledgeOptions(options) {
+    const container = document.getElementById("knowledgeOptions");
+    if (!container) return;
+
+    container.replaceChildren();
+    for (const option of options || []) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "knowledge-option";
+        button.dataset.optionId = option.id;
+
+        const label = document.createElement("span");
+        label.className = "knowledge-option-label";
+        label.textContent = option.id;
+        const text = document.createElement("span");
+        text.className = "knowledge-option-text";
+        text.textContent = option.text;
+
+        button.append(label, text);
+        button.addEventListener("click", () => selectKnowledgeOption(option.id));
+        container.append(button);
+    }
+}
+
+function selectKnowledgeOption(optionId) {
+    if (!isKnowledgeQuiz || locked || !currentQid) return;
+
+    answerStr = optionId;
+    locked = true;
+    document.querySelectorAll(".knowledge-option").forEach((button) => {
+        button.disabled = true;
+        button.classList.toggle("is-selected", button.dataset.optionId === optionId);
+    });
+    window.setTimeout(() => { void nextQ(true); }, 220);
 }
 
 async function loadSessionStats() {
@@ -63,7 +102,7 @@ async function loadQuestion() {
     answerStr = "";
     renderAnswer();
 
-    const response = await fetch("/api/question");
+    const response = await fetch(`/api/question?quiz_type=${encodeURIComponent(quizType)}`);
     const data = await response.json();
 
     if (!data.ok) {
@@ -74,15 +113,16 @@ async function loadQuestion() {
 
     currentQid = data.qid;
     document.getElementById("prompt").textContent = data.prompt;
+    if (isKnowledgeQuiz) renderKnowledgeOptions(data.options);
     locked = false;
     await loadSessionStats();
 }
 
-async function nextQ() {
+async function nextQ(force = false) {
     if (autoTimer) clearTimeout(autoTimer);
     autoTimer = null;
 
-    if (locked || !currentQid) return;
+    if ((locked && !force) || !currentQid) return;
     locked = true;
 
     const response = await fetch("/api/answer", {
@@ -103,8 +143,9 @@ async function nextQ() {
     await loadSessionStats();
 }
 
-async function resetAccount() {
-    await fetch("/api/logout", {method: "POST"});
+function resetAccount() {
+    // Switching profiles must not discard an unfinished question. The server
+    // keeps it per child and quiz type; simply return to the account picker.
     window.location.href = "/home";
 }
 

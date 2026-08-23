@@ -3,7 +3,7 @@ from datetime import date
 from fastapi import APIRouter, Request, Response
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 
-from app.config import CHILDREN, REWARD_PER_CORRECT, DAILY_LIMIT
+from app.config import CHILDREN, COOKIE_NAME, REWARD_PER_CORRECT, KNOWLEDGE_REWARD_PER_CORRECT, DAILY_LIMIT
 from app.services.session_service import SessionService
 from app.services.stats_service import StatsService
 from app.services.question_service import QuestionService
@@ -64,7 +64,14 @@ def build_router(
         return resp
 
     @r.get("/quiz", response_class=HTMLResponse)
-    def quiz_page(request: Request):
+    def quiz_redirect():
+        return RedirectResponse(url="/quiz/math", status_code=307)
+
+    @r.get("/quiz/{quiz_type}", response_class=HTMLResponse)
+    def quiz_page(request: Request, quiz_type: str):
+        quiz_type = (quiz_type or "").lower()
+        if quiz_type not in {"math", "knowledge"}:
+            return RedirectResponse(url="/quiz/math", status_code=307)
         placeholder = HTMLResponse(content="")
         sess = session_svc.get_or_create(request, placeholder)
         child = session_svc.require_child(sess)
@@ -98,10 +105,15 @@ def build_router(
                 "earned": int(recap["days"][0].get("earned", 0) or 0),
                 "level": level,
                 "DAILY_LIMIT": DAILY_LIMIT,
-                "REWARD_PER_CORRECT": REWARD_PER_CORRECT,
+                "REWARD_PER_CORRECT": KNOWLEDGE_REWARD_PER_CORRECT if quiz_type == "knowledge" else REWARD_PER_CORRECT,
+                "quiz_type": quiz_type,
             }
         )
-        session_svc.get_or_create(request, resp)
+        # The session was read through a placeholder response above. Attach a
+        # cookie to the actual HTML response too, otherwise a first-time visit
+        # starts a new session each time the quiz page is opened.
+        if request.cookies.get(COOKIE_NAME) != sess:
+            resp.set_cookie(COOKIE_NAME, sess, httponly=True, samesite="lax")
         return resp
 
     @r.get("/stats", response_class=HTMLResponse)
@@ -140,31 +152,57 @@ def build_router(
                 "children": recap,
             },
         }
-        return JSONResponse(payload)
+        response = JSONResponse(payload)
+        if request.cookies.get(COOKIE_NAME) != sess:
+            response.set_cookie(COOKIE_NAME, sess, httponly=True, samesite="lax")
+        return response
 
     @r.get("/api/question")
-    def api_question(request: Request):
+    def api_question(request: Request, quiz_type: str = "math"):
         resp = JSONResponse({})
         sess = session_svc.get_or_create(request, resp)
         stats = session_svc.get_stats(sess)
 
+        def session_json(payload: dict, status_code: int = 200):
+            response = JSONResponse(payload, status_code=status_code)
+            if request.cookies.get(COOKIE_NAME) != sess:
+                response.set_cookie(COOKIE_NAME, sess, httponly=True, samesite="lax")
+            return response
+
         if not stats or not stats.get("child"):
-            return JSONResponse({"ok": False, "message": "Pilih akun dulu."}, status_code=400)
+            return session_json({"ok": False, "message": "Pilih akun dulu."}, status_code=400)
 
         child = stats["child"]
 
-        payload, code = q_svc.get_question_payload(sess, child)
+        quiz_type = quiz_type.lower()
+        if quiz_type not in {"math", "knowledge"}:
+            return session_json({"ok": False, "message": "Jenis kuis tidak dikenal."}, status_code=400)
+
+        # Reloading the quiz page must resume the unanswered question.  Only
+        # generate and reserve another question after the current one is answered.
+        current_qid = session_svc.get_current_qid(sess, child, quiz_type)
+        if current_qid:
+            payload = q_svc.get_existing_question_payload(child, quiz_type, current_qid)
+            if payload:
+                return session_json(payload)
+            # A stale id can only occur after a bank reset or an old database.
+            session_svc.set_current_qid(sess, None, quiz_type, child)
+
+        payload, code = q_svc.get_question_payload(sess, child, quiz_type)
 
         if not payload.get("ok"):
-            return JSONResponse(payload, status_code=code)
+            return session_json(payload, status_code=code)
 
         qid = payload["qid"]
-        session_svc.set_current_qid(sess, qid)
+        if not q_svc.reserve_question(child, quiz_type, qid):
+            return session_json({"ok": False, "message": "Menyiapkan soal lain, silakan coba lagi."}, status_code=409)
+
+        session_svc.set_current_qid(sess, qid, quiz_type, child)
 
         today = session_svc.today_str()
         stats_svc.inc_served(sess, child, today)
 
-        return JSONResponse(payload)
+        return session_json(payload)
 
     @r.post("/api/answer")
     async def api_answer(request: Request):
@@ -180,28 +218,27 @@ def build_router(
         qid = (body.get("qid") or "").strip()
         ans = (body.get("answer") or "").strip()
 
-        if not stats.get("current_qid") or qid != stats["current_qid"]:
+        current_quiz_type = stats.get("current_quiz_type") or "math"
+        active_qid = session_svc.get_current_qid(sess, child, current_quiz_type)
+        if not active_qid or qid != active_qid:
             return JSONResponse({"ok": False, "message": "Soal tidak sinkron. Klik Next lagi."}, status_code=400)
 
-        q, correct_val, correct = q_svc.evaluate_answer(qid, ans)
+        q, correct_val, correct = q_svc.evaluate_answer(child, current_quiz_type, qid, ans)
         if not q:
             return JSONResponse({"ok": False, "message": "Soal tidak ditemukan."}, status_code=400)
 
         today = session_svc.today_str()
-        stats_svc.inc_answered(sess, child, today)
+        quota_cost = q_svc.quota_cost(current_quiz_type)
+        answered_today = int(stats_svc.get_daily_recap(child, [today])["days"][0].get("answered_count", 0) or 0)
+        if answered_today + quota_cost > DAILY_LIMIT:
+            return JSONResponse({"ok": False, "message": "Sisa kuota hari ini tidak cukup untuk soal ini."}, status_code=409)
+        stats_svc.inc_answered(sess, child, today, quota_cost)
 
         if correct:
-            stats_svc.mark_correct(sess, child, today, REWARD_PER_CORRECT)
+            stats_svc.mark_correct(sess, child, today, int(q.get("reward", REWARD_PER_CORRECT)))
 
-        session_svc.set_current_qid(sess, None)
+        session_svc.set_current_qid(sess, None, current_quiz_type, child)
         return JSONResponse({"ok": True, "correct": correct, "correct_answer": correct_val})
-
-    @r.post("/api/logout")
-    def api_logout(request: Request):
-        sess = request.cookies.get("math_sess")
-        if sess:
-            session_svc.logout(sess)
-        return JSONResponse({"ok": True})
 
     @r.post("/api/admin/clear")
     async def api_admin_clear(request: Request):

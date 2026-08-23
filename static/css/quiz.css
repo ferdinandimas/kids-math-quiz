@@ -557,6 +557,102 @@
     text-align: center;
 }
 
+.knowledge-question {
+    display: block;
+    min-height: 430px;
+    padding: 25px 29px 21px;
+    background:
+        radial-gradient(circle at 91% 15%, rgba(35, 124, 157, 0.18), transparent 9rem),
+        radial-gradient(circle at 28% 96%, rgba(59, 73, 191, 0.20), transparent 14rem),
+        linear-gradient(145deg, rgba(21, 52, 116, 0.98), rgba(11, 28, 77, 0.99));
+}
+
+/* .knowledge-question .question-progress {
+    top: 25px;
+    left: 29px;
+    width: min(295px, 35%);
+} */
+
+.knowledge-question .tutor-area {
+    top: 1px;
+    right: 13px;
+    transform: scale(0.84);
+    transform-origin: top right;
+}
+
+.knowledge-question .quiz-prompt {
+    margin: 79px 190px 15px 0;
+    color: #f6f7ff;
+    font-size: clamp(25px, 2.7vw, 36px);
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.knowledge-options {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+}
+
+.knowledge-option {
+    display: flex;
+    min-height: 49px;
+    align-items: center;
+    gap: 14px;
+    padding: 7px 16px 7px 11px;
+    border: 1px solid rgba(73, 126, 218, 0.76);
+    border-radius: 14px;
+    background: linear-gradient(115deg, rgba(19, 58, 129, 0.94), rgba(14, 39, 99, 0.95));
+    box-shadow: inset 0 1px rgba(197, 220, 255, 0.08), 0 3px 8px rgba(1, 10, 39, 0.28);
+    color: #f5f7ff;
+    cursor: pointer;
+    font: inherit;
+    font-size: clamp(16px, 1.7vw, 20px);
+    font-weight: 800;
+    text-align: left;
+    transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.knowledge-option:hover:not(:disabled),
+.knowledge-option:focus-visible {
+    border-color: #79b8ff;
+    outline: none;
+    transform: translateY(-1px);
+}
+
+.knowledge-option:disabled { cursor: default; }
+
+.knowledge-option.is-selected {
+    border-color: #bd7bff;
+    background: linear-gradient(110deg, rgba(111, 57, 214, 0.98), rgba(67, 35, 157, 0.98));
+    box-shadow: inset 0 0 16px rgba(221, 188, 255, 0.24), 0 0 12px rgba(159, 86, 255, 0.78);
+}
+
+.knowledge-option-label {
+    display: grid;
+    width: 31px;
+    height: 31px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid rgba(137, 193, 255, 0.70);
+    border-radius: 50%;
+    background: radial-gradient(circle at 36% 29%, #79caff, #285dbd 66%, #1a3b91);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.36), 0 2px 5px rgba(3, 16, 62, 0.46);
+    color: #f7fbff;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.knowledge-option.is-selected .knowledge-option-label {
+    border-color: #eccdff;
+    background: radial-gradient(circle at 36% 29%, #c78dff, #7538d9 66%, #51259f);
+}
+
+.knowledge-question .quiz-help {
+    margin-top: 12px;
+}
+
 .quiz-message {
     position: absolute;
     bottom: 10px;
@@ -735,9 +831,11 @@
 
 .quiz-actions {
     display: grid;
-    grid-template-columns: 1fr 1.05fr;
+    grid-template-columns: 1fr;
     gap: 17px;
 }
+
+.knowledge-actions { grid-template-columns: 1fr; }
 
 .quiz-actions button {
     display: inline-flex;
@@ -1280,10 +1378,13 @@
     .quiz-question { min-height: 239px; padding: 12px 10px; border-radius: 18px; }
     .question-progress { top: 19px; left: 19px; width: 47%; gap: 8px; font-size: 16px; }
     .progress-track { height: 8px; }
-    .tutor-area { top: 60px; right: 0px; transform: scale(0.48); }
-    .tutor-area .tutor-bubble { top: -85px; width: 300px; right: 20px; }
-    .tutor-area .question-star { top: -85px; font-size: 55px; }
-    .tutor-area img { height: 230px; top: 0px; right: 10px;}
+    .quiz-question .tutor-area { top: 60px; right: 0px; transform: scale(0.48); }
+    .quiz-question .tutor-area .tutor-bubble { top: -85px; width: 300px; right: 20px; }
+    .quiz-question .tutor-area .question-star { top: -85px; font-size: 55px; }
+    .quiz-question .tutor-area img { height: 230px; top: 0px; right: 10px;}
+    .quiz-question.knowledge-question .tutor-area { top: 60px; right: 0px; transform: scale(0.48); }
+    .quiz-question.knowledge-question .tutor-area img { display: none; }
+    .quiz-question.knowledge-question .tutor-area::after { display: none; }
     .quiz-prompt { margin-top: 75px; margin-bottom: 14px; font-size: 46px; }
     .quiz-answer { height: 52px; border-radius: 14px; font-size: 30px; line-height: 53px; }
     .quiz-help { margin-top: 8px; font-size: 13px; }
@@ -1352,4 +1453,30 @@
     .quiz-actions button span { margin: 0 4px; font-size: 23px; }
     .reset-account-icon { width: 23px; height: 23px; margin-right: 6px; }
     .next-icon { width: 23px; height: 23px; margin-left: 6px; }
+}
+
+@media (max-width: 620px) {
+    .quiz-workspace.is-knowledge { gap: 12px; }
+    .is-knowledge > .school-doodle-image { display: none; }
+    .knowledge-question { min-height: 355px; padding: 18px 18px 16px; }
+    /* .knowledge-question .question-progress { top: 18px; left: 18px; width: 47%; gap: 8px; } */
+    .knowledge-question .tutor-area { top: -8px; right: -9px; transform: scale(0.62); }
+    .knowledge-question .quiz-prompt { margin: 68px 94px 13px 0; font-size: 22px; }
+    .knowledge-option { min-height: 42px; gap: 11px; padding: 5px 12px 5px 8px; font-size: 15px; }
+    .knowledge-option-label { width: 28px; height: 28px; font-size: 14px; }
+    .knowledge-question .quiz-help { margin-top: 9px; font-size: 13px; }
+}
+
+@media (max-width: 440px) {
+    .quiz-workspace.is-knowledge { padding: 12px 10px 14px; }
+    .knowledge-question { min-height: 307px; padding: 13px 13px 10px; border-radius: 16px; }
+    /* .knowledge-question .question-progress { top: 15px; left: 15px; width: 46%; gap: 6px; font-size: 13px; } */
+    /* .knowledge-question .progress-track { height: 6px; } */
+    .knowledge-question .tutor-area { top: -13px; right: -12px; transform: scale(0.48); }
+    .knowledge-question .quiz-prompt { margin: 59px 78px 9px 0; font-size: 18px; line-height: 1.15; }
+    .knowledge-options { gap: 6px; }
+    .knowledge-option { min-height: 37px; gap: 10px; padding: 4px 9px 4px 7px; border-radius: 11px; font-size: 14px; }
+    .knowledge-option-label { width: 25px; height: 25px; font-size: 13px; }
+    .knowledge-question .quiz-help { margin-top: 7px; font-size: 11px; text-align: left; }
+    .knowledge-actions button { height: 48px; }
 }

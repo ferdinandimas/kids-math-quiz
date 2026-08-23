@@ -1,0 +1,5405 @@
+{
+  "version": 1,
+  "questions": [
+    {
+      "id": "knowledge_pemula_001",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Hewan yang bernapas dengan insang adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ikan"
+        },
+        {
+          "id": "B",
+          "text": "Kucing"
+        },
+        {
+          "id": "C",
+          "text": "Ayam"
+        },
+        {
+          "id": "D",
+          "text": "Kambing"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_002",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Bagian tubuh untuk melihat adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Telinga"
+        },
+        {
+          "id": "B",
+          "text": "Mata"
+        },
+        {
+          "id": "C",
+          "text": "Hidung"
+        },
+        {
+          "id": "D",
+          "text": "Kulit"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_003",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Tumbuhan membuat makanan terutama di ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Akar"
+        },
+        {
+          "id": "B",
+          "text": "Batang"
+        },
+        {
+          "id": "C",
+          "text": "Daun"
+        },
+        {
+          "id": "D",
+          "text": "Bunga"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_004",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Air yang membeku berubah menjadi ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Uap"
+        },
+        {
+          "id": "B",
+          "text": "Es"
+        },
+        {
+          "id": "C",
+          "text": "Minyak"
+        },
+        {
+          "id": "D",
+          "text": "Pasir"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_005",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Sumber cahaya alami pada siang hari adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bulan"
+        },
+        {
+          "id": "B",
+          "text": "Lampu"
+        },
+        {
+          "id": "C",
+          "text": "Matahari"
+        },
+        {
+          "id": "D",
+          "text": "Lilin"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_006",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Hewan yang memiliki sayap adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ikan"
+        },
+        {
+          "id": "B",
+          "text": "Burung"
+        },
+        {
+          "id": "C",
+          "text": "Cacing"
+        },
+        {
+          "id": "D",
+          "text": "Kelinci"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_007",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Kita mendengar menggunakan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mata"
+        },
+        {
+          "id": "B",
+          "text": "Telinga"
+        },
+        {
+          "id": "C",
+          "text": "Mulut"
+        },
+        {
+          "id": "D",
+          "text": "Tangan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_008",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Bagian tumbuhan yang berada di dalam tanah adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Daun"
+        },
+        {
+          "id": "B",
+          "text": "Bunga"
+        },
+        {
+          "id": "C",
+          "text": "Akar"
+        },
+        {
+          "id": "D",
+          "text": "Buah"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_009",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Lawan kata besar adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tinggi"
+        },
+        {
+          "id": "B",
+          "text": "Kecil"
+        },
+        {
+          "id": "C",
+          "text": "Panjang"
+        },
+        {
+          "id": "D",
+          "text": "Lebar"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_010",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Kata untuk menyebut nama orang disebut kata ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Benda"
+        },
+        {
+          "id": "B",
+          "text": "Kerja"
+        },
+        {
+          "id": "C",
+          "text": "Sifat"
+        },
+        {
+          "id": "D",
+          "text": "Nama diri"
+        }
+      ],
+      "answer": "D",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_011",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Kalimat tanya diakhiri tanda ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Titik"
+        },
+        {
+          "id": "B",
+          "text": "Koma"
+        },
+        {
+          "id": "C",
+          "text": "Tanya"
+        },
+        {
+          "id": "D",
+          "text": "Seru"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_012",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Susunan huruf yang memiliki makna disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kata"
+        },
+        {
+          "id": "B",
+          "text": "Angka"
+        },
+        {
+          "id": "C",
+          "text": "Garis"
+        },
+        {
+          "id": "D",
+          "text": "Warna"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_013",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Lawan kata panas adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dingin"
+        },
+        {
+          "id": "B",
+          "text": "Terang"
+        },
+        {
+          "id": "C",
+          "text": "Keras"
+        },
+        {
+          "id": "D",
+          "text": "Cepat"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_014",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Kata kerja dalam kalimat 'Adi berlari' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Adi"
+        },
+        {
+          "id": "B",
+          "text": "Berlari"
+        },
+        {
+          "id": "C",
+          "text": "Dalam"
+        },
+        {
+          "id": "D",
+          "text": "Kalimat"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_015",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Kumpulan beberapa kata yang memiliki makna disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Huruf"
+        },
+        {
+          "id": "B",
+          "text": "Kalimat"
+        },
+        {
+          "id": "C",
+          "text": "Suku kata"
+        },
+        {
+          "id": "D",
+          "text": "Paragraf"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_016",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Tanda baca untuk mengakhiri kalimat berita adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Titik"
+        },
+        {
+          "id": "B",
+          "text": "Tanya"
+        },
+        {
+          "id": "C",
+          "text": "Koma"
+        },
+        {
+          "id": "D",
+          "text": "Petik"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_017",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Bahasa Inggris dari 'buku' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pen"
+        },
+        {
+          "id": "B",
+          "text": "Book"
+        },
+        {
+          "id": "C",
+          "text": "Bag"
+        },
+        {
+          "id": "D",
+          "text": "Chair"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_018",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Bahasa Inggris dari 'merah' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Blue"
+        },
+        {
+          "id": "B",
+          "text": "Green"
+        },
+        {
+          "id": "C",
+          "text": "Red"
+        },
+        {
+          "id": "D",
+          "text": "White"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_019",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Arti kata 'cat' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Anjing"
+        },
+        {
+          "id": "B",
+          "text": "Kucing"
+        },
+        {
+          "id": "C",
+          "text": "Burung"
+        },
+        {
+          "id": "D",
+          "text": "Ikan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_020",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Kata Inggris untuk angka dua adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "One"
+        },
+        {
+          "id": "B",
+          "text": "Two"
+        },
+        {
+          "id": "C",
+          "text": "Three"
+        },
+        {
+          "id": "D",
+          "text": "Four"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_021",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Sapaan 'Good morning' berarti ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Selamat malam"
+        },
+        {
+          "id": "B",
+          "text": "Selamat pagi"
+        },
+        {
+          "id": "C",
+          "text": "Sampai jumpa"
+        },
+        {
+          "id": "D",
+          "text": "Terima kasih"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_022",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Bahasa Inggris dari 'air' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Milk"
+        },
+        {
+          "id": "B",
+          "text": "Rice"
+        },
+        {
+          "id": "C",
+          "text": "Water"
+        },
+        {
+          "id": "D",
+          "text": "Juice"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_023",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Arti kata 'school' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rumah"
+        },
+        {
+          "id": "B",
+          "text": "Sekolah"
+        },
+        {
+          "id": "C",
+          "text": "Pasar"
+        },
+        {
+          "id": "D",
+          "text": "Taman"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_024",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Kata Inggris untuk 'ibu' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Father"
+        },
+        {
+          "id": "B",
+          "text": "Brother"
+        },
+        {
+          "id": "C",
+          "text": "Mother"
+        },
+        {
+          "id": "D",
+          "text": "Sister"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_025",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Lambang negara Indonesia adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Garuda Pancasila"
+        },
+        {
+          "id": "B",
+          "text": "Merah Putih"
+        },
+        {
+          "id": "C",
+          "text": "Bintang"
+        },
+        {
+          "id": "D",
+          "text": "Padi"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_026",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Bendera Indonesia berwarna ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Biru putih"
+        },
+        {
+          "id": "B",
+          "text": "Merah putih"
+        },
+        {
+          "id": "C",
+          "text": "Hijau kuning"
+        },
+        {
+          "id": "D",
+          "text": "Hitam putih"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_027",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Dasar negara Indonesia adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "UUD"
+        },
+        {
+          "id": "B",
+          "text": "Pancasila"
+        },
+        {
+          "id": "C",
+          "text": "Bhinneka"
+        },
+        {
+          "id": "D",
+          "text": "Proklamasi"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_028",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Kita harus ... kepada guru.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengejek"
+        },
+        {
+          "id": "B",
+          "text": "Menghormati"
+        },
+        {
+          "id": "C",
+          "text": "Melawan"
+        },
+        {
+          "id": "D",
+          "text": "Mengabaikan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_029",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Contoh hidup rukun adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bertengkar"
+        },
+        {
+          "id": "B",
+          "text": "Saling membantu"
+        },
+        {
+          "id": "C",
+          "text": "Mengejek"
+        },
+        {
+          "id": "D",
+          "text": "Bermain curang"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_030",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Semboyan bangsa Indonesia adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tut Wuri"
+        },
+        {
+          "id": "B",
+          "text": "Bhinneka Tunggal Ika"
+        },
+        {
+          "id": "C",
+          "text": "Ing Ngarsa"
+        },
+        {
+          "id": "D",
+          "text": "Merdeka"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_031",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Saat upacara bendera kita harus bersikap ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ribut"
+        },
+        {
+          "id": "B",
+          "text": "Tertib"
+        },
+        {
+          "id": "C",
+          "text": "Bermain"
+        },
+        {
+          "id": "D",
+          "text": "Berlari"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_032",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Menolong teman yang kesulitan merupakan sikap ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Peduli"
+        },
+        {
+          "id": "B",
+          "text": "Malas"
+        },
+        {
+          "id": "C",
+          "text": "Sombong"
+        },
+        {
+          "id": "D",
+          "text": "Iri"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_033",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Matahari terbit dari arah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Barat"
+        },
+        {
+          "id": "B",
+          "text": "Timur"
+        },
+        {
+          "id": "C",
+          "text": "Utara"
+        },
+        {
+          "id": "D",
+          "text": "Selatan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_034",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Tempat tinggal manusia disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Habitat"
+        },
+        {
+          "id": "B",
+          "text": "Planet"
+        },
+        {
+          "id": "C",
+          "text": "Awan"
+        },
+        {
+          "id": "D",
+          "text": "Laut"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_035",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Daratan yang sangat luas disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pulau"
+        },
+        {
+          "id": "B",
+          "text": "Benua"
+        },
+        {
+          "id": "C",
+          "text": "Danau"
+        },
+        {
+          "id": "D",
+          "text": "Sungai"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_036",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Air yang mengalir menuju laut disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gunung"
+        },
+        {
+          "id": "B",
+          "text": "Sungai"
+        },
+        {
+          "id": "C",
+          "text": "Lembah"
+        },
+        {
+          "id": "D",
+          "text": "Padang"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_037",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Tempat tinggi yang menjulang disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gunung"
+        },
+        {
+          "id": "B",
+          "text": "Pantai"
+        },
+        {
+          "id": "C",
+          "text": "Danau"
+        },
+        {
+          "id": "D",
+          "text": "Teluk"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_038",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Wilayah pertemuan daratan dan laut disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pantai"
+        },
+        {
+          "id": "B",
+          "text": "Hutan"
+        },
+        {
+          "id": "C",
+          "text": "Lembah"
+        },
+        {
+          "id": "D",
+          "text": "Gurun"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_039",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Bumi berbentuk hampir seperti ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kubus"
+        },
+        {
+          "id": "B",
+          "text": "Bola"
+        },
+        {
+          "id": "C",
+          "text": "Segitiga"
+        },
+        {
+          "id": "D",
+          "text": "Kotak"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_040",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Kumpulan air asin yang sangat luas disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kolam"
+        },
+        {
+          "id": "B",
+          "text": "Laut"
+        },
+        {
+          "id": "C",
+          "text": "Sawah"
+        },
+        {
+          "id": "D",
+          "text": "Sungai"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_041",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Hewan yang mengalami metamorfosis sempurna adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kupu-kupu"
+        },
+        {
+          "id": "B",
+          "text": "Kucing"
+        },
+        {
+          "id": "C",
+          "text": "Ayam"
+        },
+        {
+          "id": "D",
+          "text": "Ikan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_042",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Proses tumbuhan membuat makanan disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Respirasi"
+        },
+        {
+          "id": "B",
+          "text": "Fotosintesis"
+        },
+        {
+          "id": "C",
+          "text": "Evaporasi"
+        },
+        {
+          "id": "D",
+          "text": "Adaptasi"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_043",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Organ yang memompa darah adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Paru-paru"
+        },
+        {
+          "id": "B",
+          "text": "Jantung"
+        },
+        {
+          "id": "C",
+          "text": "Lambung"
+        },
+        {
+          "id": "D",
+          "text": "Ginjal"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_044",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Perubahan uap menjadi titik air disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mencair"
+        },
+        {
+          "id": "B",
+          "text": "Menguap"
+        },
+        {
+          "id": "C",
+          "text": "Mengembun"
+        },
+        {
+          "id": "D",
+          "text": "Membeku"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_045",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Gaya yang menarik benda ke Bumi disebut gaya ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gesek"
+        },
+        {
+          "id": "B",
+          "text": "Gravitasi"
+        },
+        {
+          "id": "C",
+          "text": "Pegas"
+        },
+        {
+          "id": "D",
+          "text": "Otot"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_046",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Rangka berfungsi untuk ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mencerna makanan"
+        },
+        {
+          "id": "B",
+          "text": "Menopang tubuh"
+        },
+        {
+          "id": "C",
+          "text": "Menghasilkan suara"
+        },
+        {
+          "id": "D",
+          "text": "Memompa darah"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_047",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Hewan pemakan tumbuhan disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Karnivora"
+        },
+        {
+          "id": "B",
+          "text": "Herbivora"
+        },
+        {
+          "id": "C",
+          "text": "Omnivora"
+        },
+        {
+          "id": "D",
+          "text": "Insektivora"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_048",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Satuan dasar penyusun makhluk hidup adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Organ"
+        },
+        {
+          "id": "B",
+          "text": "Sel"
+        },
+        {
+          "id": "C",
+          "text": "Jaringan"
+        },
+        {
+          "id": "D",
+          "text": "Sistem"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_049",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Gagasan utama dalam paragraf disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ide pokok"
+        },
+        {
+          "id": "B",
+          "text": "Kata ulang"
+        },
+        {
+          "id": "C",
+          "text": "Kalimat tanya"
+        },
+        {
+          "id": "D",
+          "text": "Judul buku"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_050",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kata 'berlari' memiliki imbuhan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "ber-"
+        },
+        {
+          "id": "B",
+          "text": "me-"
+        },
+        {
+          "id": "C",
+          "text": "di-"
+        },
+        {
+          "id": "D",
+          "text": "ter-"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_051",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Lawan kata 'optimis' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aktif"
+        },
+        {
+          "id": "B",
+          "text": "Pesimis"
+        },
+        {
+          "id": "C",
+          "text": "Kreatif"
+        },
+        {
+          "id": "D",
+          "text": "Produktif"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_052",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kalimat yang berisi perintah disebut kalimat ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Berita"
+        },
+        {
+          "id": "B",
+          "text": "Tanya"
+        },
+        {
+          "id": "C",
+          "text": "Perintah"
+        },
+        {
+          "id": "D",
+          "text": "Seru"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_053",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Persamaan kata 'cerdas' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bodoh"
+        },
+        {
+          "id": "B",
+          "text": "Pandai"
+        },
+        {
+          "id": "C",
+          "text": "Lambat"
+        },
+        {
+          "id": "D",
+          "text": "Lemah"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_054",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Teks yang berisi langkah melakukan sesuatu disebut teks ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Narasi"
+        },
+        {
+          "id": "B",
+          "text": "Prosedur"
+        },
+        {
+          "id": "C",
+          "text": "Deskripsi"
+        },
+        {
+          "id": "D",
+          "text": "Puisi"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_055",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kata baku yang benar adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Resiko"
+        },
+        {
+          "id": "B",
+          "text": "Risiko"
+        },
+        {
+          "id": "C",
+          "text": "Resikko"
+        },
+        {
+          "id": "D",
+          "text": "Resikho"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_056",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kalimat 'Budi membaca buku' memiliki predikat ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Budi"
+        },
+        {
+          "id": "B",
+          "text": "Membaca"
+        },
+        {
+          "id": "C",
+          "text": "Buku"
+        },
+        {
+          "id": "D",
+          "text": "Membaca buku"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_057",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "Choose the correct sentence ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "She are happy"
+        },
+        {
+          "id": "B",
+          "text": "She is happy"
+        },
+        {
+          "id": "C",
+          "text": "She am happy"
+        },
+        {
+          "id": "D",
+          "text": "She be happy"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_058",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "The opposite of 'expensive' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cheap"
+        },
+        {
+          "id": "B",
+          "text": "Large"
+        },
+        {
+          "id": "C",
+          "text": "Heavy"
+        },
+        {
+          "id": "D",
+          "text": "Fast"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_059",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "Past tense of 'go' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Goed"
+        },
+        {
+          "id": "B",
+          "text": "Gone"
+        },
+        {
+          "id": "C",
+          "text": "Went"
+        },
+        {
+          "id": "D",
+          "text": "Going"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_060",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "'They are playing' means ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mereka sedang bermain"
+        },
+        {
+          "id": "B",
+          "text": "Mereka sudah tidur"
+        },
+        {
+          "id": "C",
+          "text": "Dia bermain"
+        },
+        {
+          "id": "D",
+          "text": "Kami belajar"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_061",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "Complete: I ... a student.",
+      "options": [
+        {
+          "id": "A",
+          "text": "am"
+        },
+        {
+          "id": "B",
+          "text": "is"
+        },
+        {
+          "id": "C",
+          "text": "are"
+        },
+        {
+          "id": "D",
+          "text": "be"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_062",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "The plural form of 'child' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Childs"
+        },
+        {
+          "id": "B",
+          "text": "Children"
+        },
+        {
+          "id": "C",
+          "text": "Childes"
+        },
+        {
+          "id": "D",
+          "text": "Childrens"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_063",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "A place where sick people receive treatment is a ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Library"
+        },
+        {
+          "id": "B",
+          "text": "Hospital"
+        },
+        {
+          "id": "C",
+          "text": "Market"
+        },
+        {
+          "id": "D",
+          "text": "Station"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_064",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "The word 'beautiful' is an ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Adjective"
+        },
+        {
+          "id": "B",
+          "text": "Verb"
+        },
+        {
+          "id": "C",
+          "text": "Adverb"
+        },
+        {
+          "id": "D",
+          "text": "Pronoun"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_065",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Sila kedua Pancasila dilambangkan oleh ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bintang"
+        },
+        {
+          "id": "B",
+          "text": "Rantai"
+        },
+        {
+          "id": "C",
+          "text": "Pohon beringin"
+        },
+        {
+          "id": "D",
+          "text": "Kepala banteng"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_066",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "UUD 1945 merupakan ... negara Indonesia.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lagu"
+        },
+        {
+          "id": "B",
+          "text": "Hukum dasar"
+        },
+        {
+          "id": "C",
+          "text": "Semboyan"
+        },
+        {
+          "id": "D",
+          "text": "Lambang"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_067",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Musyawarah bertujuan mencapai ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pertengkaran"
+        },
+        {
+          "id": "B",
+          "text": "Mufakat"
+        },
+        {
+          "id": "C",
+          "text": "Kemenangan pribadi"
+        },
+        {
+          "id": "D",
+          "text": "Hukuman"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_068",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Contoh kewajiban siswa di sekolah adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menerima hadiah"
+        },
+        {
+          "id": "B",
+          "text": "Menaati tata tertib"
+        },
+        {
+          "id": "C",
+          "text": "Memilih presiden"
+        },
+        {
+          "id": "D",
+          "text": "Membuat undang-undang"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_069",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Hak warga negara dalam bidang pendidikan adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mendapat pendidikan"
+        },
+        {
+          "id": "B",
+          "text": "Menghindari sekolah"
+        },
+        {
+          "id": "C",
+          "text": "Melanggar aturan"
+        },
+        {
+          "id": "D",
+          "text": "Menolak belajar"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_070",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Sikap terhadap keberagaman budaya sebaiknya ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghargai"
+        },
+        {
+          "id": "B",
+          "text": "Mengejek"
+        },
+        {
+          "id": "C",
+          "text": "Menghapus"
+        },
+        {
+          "id": "D",
+          "text": "Menjauhi"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_071",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Pemilihan ketua kelas sebaiknya dilakukan secara ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Paksa"
+        },
+        {
+          "id": "B",
+          "text": "Demokratis"
+        },
+        {
+          "id": "C",
+          "text": "Rahasia tanpa aturan"
+        },
+        {
+          "id": "D",
+          "text": "Curang"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_072",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Gotong royong mencerminkan nilai ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kerja sama"
+        },
+        {
+          "id": "B",
+          "text": "Persaingan"
+        },
+        {
+          "id": "C",
+          "text": "Kesombongan"
+        },
+        {
+          "id": "D",
+          "text": "Kemalasan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_073",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Garis khatulistiwa membagi Bumi menjadi belahan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Utara dan Selatan"
+        },
+        {
+          "id": "B",
+          "text": "Timur dan Barat"
+        },
+        {
+          "id": "C",
+          "text": "Daratan dan laut"
+        },
+        {
+          "id": "D",
+          "text": "Panas dan dingin"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_074",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Gunung, bukit, dan lembah termasuk kenampakan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Buatan"
+        },
+        {
+          "id": "B",
+          "text": "Alam"
+        },
+        {
+          "id": "C",
+          "text": "Sosial"
+        },
+        {
+          "id": "D",
+          "text": "Ekonomi"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_075",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Peta digunakan untuk menunjukkan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Letak suatu tempat"
+        },
+        {
+          "id": "B",
+          "text": "Rasa makanan"
+        },
+        {
+          "id": "C",
+          "text": "Warna pakaian"
+        },
+        {
+          "id": "D",
+          "text": "Suara hewan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_076",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Danau adalah genangan air yang dikelilingi oleh ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Daratan"
+        },
+        {
+          "id": "B",
+          "text": "Awan"
+        },
+        {
+          "id": "C",
+          "text": "Lautan"
+        },
+        {
+          "id": "D",
+          "text": "Gunung api"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_077",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Indonesia disebut negara kepulauan karena memiliki banyak ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gurun"
+        },
+        {
+          "id": "B",
+          "text": "Pulau"
+        },
+        {
+          "id": "C",
+          "text": "Sungai"
+        },
+        {
+          "id": "D",
+          "text": "Pegunungan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_078",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Angin adalah udara yang ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Diam"
+        },
+        {
+          "id": "B",
+          "text": "Bergerak"
+        },
+        {
+          "id": "C",
+          "text": "Membeku"
+        },
+        {
+          "id": "D",
+          "text": "Menghilang"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_079",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Banjir dapat terjadi karena ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menanam pohon"
+        },
+        {
+          "id": "B",
+          "text": "Sampah menyumbat sungai"
+        },
+        {
+          "id": "C",
+          "text": "Membersihkan selokan"
+        },
+        {
+          "id": "D",
+          "text": "Menghemat air"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_080",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Daerah rendah di antara bukit atau gunung disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lembah"
+        },
+        {
+          "id": "B",
+          "text": "Pantai"
+        },
+        {
+          "id": "C",
+          "text": "Dataran tinggi"
+        },
+        {
+          "id": "D",
+          "text": "Delta"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_081",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Rangkaian makanan yang menunjukkan siapa memakan siapa disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Rantai makanan"
+        },
+        {
+          "id": "B",
+          "text": "Siklus air"
+        },
+        {
+          "id": "C",
+          "text": "Daur hidup"
+        },
+        {
+          "id": "D",
+          "text": "Rantai listrik"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_082",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Perubahan air menjadi uap karena panas disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membeku"
+        },
+        {
+          "id": "B",
+          "text": "Menguap"
+        },
+        {
+          "id": "C",
+          "text": "Mencair"
+        },
+        {
+          "id": "D",
+          "text": "Mengembun"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_083",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Alat yang mengubah energi listrik menjadi cahaya adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lampu"
+        },
+        {
+          "id": "B",
+          "text": "Kipas"
+        },
+        {
+          "id": "C",
+          "text": "Kompas"
+        },
+        {
+          "id": "D",
+          "text": "Termometer"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_084",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Tulang dan otot bekerja sama untuk membantu tubuh ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bergerak"
+        },
+        {
+          "id": "B",
+          "text": "Mencerna"
+        },
+        {
+          "id": "C",
+          "text": "Mendengar"
+        },
+        {
+          "id": "D",
+          "text": "Melihat"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_085",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Sendi pada siku memungkinkan lengan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menekuk"
+        },
+        {
+          "id": "B",
+          "text": "Berputar penuh"
+        },
+        {
+          "id": "C",
+          "text": "Melekat"
+        },
+        {
+          "id": "D",
+          "text": "Mengembang"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_086",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Udara masuk ke tubuh terutama melalui ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Paru-paru"
+        },
+        {
+          "id": "B",
+          "text": "Lambung"
+        },
+        {
+          "id": "C",
+          "text": "Ginjal"
+        },
+        {
+          "id": "D",
+          "text": "Tulang"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_087",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Urutan daur air yang benar adalah menguap, mengembun, lalu ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membeku"
+        },
+        {
+          "id": "B",
+          "text": "Hujan"
+        },
+        {
+          "id": "C",
+          "text": "Mencair"
+        },
+        {
+          "id": "D",
+          "text": "Mendidih"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_088",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Bunyi dihasilkan oleh benda yang ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bergetar"
+        },
+        {
+          "id": "B",
+          "text": "Diam"
+        },
+        {
+          "id": "C",
+          "text": "Membeku"
+        },
+        {
+          "id": "D",
+          "text": "Menghilang"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_089",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Kalimat yang menyampaikan informasi disebut kalimat ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Berita"
+        },
+        {
+          "id": "B",
+          "text": "Tanya"
+        },
+        {
+          "id": "C",
+          "text": "Perintah"
+        },
+        {
+          "id": "D",
+          "text": "Seru"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_090",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Kata berimbuhan pada kalimat 'Dina menanam bunga' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dina"
+        },
+        {
+          "id": "B",
+          "text": "Menanam"
+        },
+        {
+          "id": "C",
+          "text": "Bunga"
+        },
+        {
+          "id": "D",
+          "text": "Kalimat"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_091",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Gagasan utama biasanya didukung oleh gagasan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Penjelas"
+        },
+        {
+          "id": "B",
+          "text": "Rahasia"
+        },
+        {
+          "id": "C",
+          "text": "Lawan"
+        },
+        {
+          "id": "D",
+          "text": "Judul"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_092",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Tanda baca yang digunakan sebelum daftar adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Titik dua"
+        },
+        {
+          "id": "B",
+          "text": "Tanda tanya"
+        },
+        {
+          "id": "C",
+          "text": "Tanda seru"
+        },
+        {
+          "id": "D",
+          "text": "Tanda petik"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_093",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Paragraf yang menceritakan suatu kejadian disebut paragraf ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Narasi"
+        },
+        {
+          "id": "B",
+          "text": "Deskripsi"
+        },
+        {
+          "id": "C",
+          "text": "Persuasi"
+        },
+        {
+          "id": "D",
+          "text": "Argumentasi"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_094",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Kalimat langsung biasanya diapit oleh tanda ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Petik"
+        },
+        {
+          "id": "B",
+          "text": "Kurung"
+        },
+        {
+          "id": "C",
+          "text": "Hubung"
+        },
+        {
+          "id": "D",
+          "text": "Koma"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_095",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Penulisan kata baku yang benar adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aktifitas"
+        },
+        {
+          "id": "B",
+          "text": "Aktivitas"
+        },
+        {
+          "id": "C",
+          "text": "Aktifitass"
+        },
+        {
+          "id": "D",
+          "text": "Aktifittas"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_096",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Ciri pantun adalah setiap baitnya memiliki ... baris.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dua"
+        },
+        {
+          "id": "B",
+          "text": "Tiga"
+        },
+        {
+          "id": "C",
+          "text": "Empat"
+        },
+        {
+          "id": "D",
+          "text": "Lima"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_097",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "Choose the correct sentence.",
+      "options": [
+        {
+          "id": "A",
+          "text": "He go to school"
+        },
+        {
+          "id": "B",
+          "text": "He goes to school"
+        },
+        {
+          "id": "C",
+          "text": "He going school"
+        },
+        {
+          "id": "D",
+          "text": "He gone school"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_098",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "The past form of 'play' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Played"
+        },
+        {
+          "id": "B",
+          "text": "Playing"
+        },
+        {
+          "id": "C",
+          "text": "Plays"
+        },
+        {
+          "id": "D",
+          "text": "Play"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_099",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "The opposite of 'difficult' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Easy"
+        },
+        {
+          "id": "B",
+          "text": "Heavy"
+        },
+        {
+          "id": "C",
+          "text": "Long"
+        },
+        {
+          "id": "D",
+          "text": "Slow"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_100",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "Complete: My sister ... reading a book.",
+      "options": [
+        {
+          "id": "A",
+          "text": "am"
+        },
+        {
+          "id": "B",
+          "text": "is"
+        },
+        {
+          "id": "C",
+          "text": "are"
+        },
+        {
+          "id": "D",
+          "text": "be"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_101",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "The book is ... the table.",
+      "options": [
+        {
+          "id": "A",
+          "text": "on"
+        },
+        {
+          "id": "B",
+          "text": "at"
+        },
+        {
+          "id": "C",
+          "text": "to"
+        },
+        {
+          "id": "D",
+          "text": "by"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_102",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "The comparative form of 'small' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Smallest"
+        },
+        {
+          "id": "B",
+          "text": "Smaller"
+        },
+        {
+          "id": "C",
+          "text": "More small"
+        },
+        {
+          "id": "D",
+          "text": "Small"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_103",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "'Could you help me?' is a polite ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Request"
+        },
+        {
+          "id": "B",
+          "text": "Answer"
+        },
+        {
+          "id": "C",
+          "text": "Color"
+        },
+        {
+          "id": "D",
+          "text": "Name"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_104",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "There are ... apples in the basket.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Much"
+        },
+        {
+          "id": "B",
+          "text": "Many"
+        },
+        {
+          "id": "C",
+          "text": "Any water"
+        },
+        {
+          "id": "D",
+          "text": "A rice"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_105",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Sila pertama Pancasila mengajarkan kita untuk ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Beribadah dan menghormati agama"
+        },
+        {
+          "id": "B",
+          "text": "Bertengkar"
+        },
+        {
+          "id": "C",
+          "text": "Memaksakan pendapat"
+        },
+        {
+          "id": "D",
+          "text": "Membuang sampah"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_106",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Contoh penerapan sila kedua adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menolong teman yang terluka"
+        },
+        {
+          "id": "B",
+          "text": "Mengejek teman"
+        },
+        {
+          "id": "C",
+          "text": "Memilih teman berdasarkan suku"
+        },
+        {
+          "id": "D",
+          "text": "Berlaku curang"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_107",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Persatuan Indonesia berarti kita harus ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menjaga kerukunan"
+        },
+        {
+          "id": "B",
+          "text": "Membenci perbedaan"
+        },
+        {
+          "id": "C",
+          "text": "Memaksakan budaya"
+        },
+        {
+          "id": "D",
+          "text": "Bertengkar"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_108",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Keputusan dalam musyawarah sebaiknya dilaksanakan dengan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tanggung jawab"
+        },
+        {
+          "id": "B",
+          "text": "Marah"
+        },
+        {
+          "id": "C",
+          "text": "Terpaksa"
+        },
+        {
+          "id": "D",
+          "text": "Curang"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_109",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Keadilan sosial berarti bersikap ... kepada semua orang.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Adil"
+        },
+        {
+          "id": "B",
+          "text": "Pilih kasih"
+        },
+        {
+          "id": "C",
+          "text": "Sombong"
+        },
+        {
+          "id": "D",
+          "text": "Iri"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_110",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Hak anak di sekolah adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mendapat pelajaran"
+        },
+        {
+          "id": "B",
+          "text": "Merusak kelas"
+        },
+        {
+          "id": "C",
+          "text": "Melanggar aturan"
+        },
+        {
+          "id": "D",
+          "text": "Mengganggu guru"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_111",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Kewajiban siswa setelah menggunakan kelas adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menjaga kebersihan"
+        },
+        {
+          "id": "B",
+          "text": "Meninggalkan sampah"
+        },
+        {
+          "id": "C",
+          "text": "Merusak meja"
+        },
+        {
+          "id": "D",
+          "text": "Bermain terus"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_112",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Perbedaan suku dan bahasa merupakan contoh ... bangsa.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keberagaman"
+        },
+        {
+          "id": "B",
+          "text": "Perselisihan"
+        },
+        {
+          "id": "C",
+          "text": "Kelemahan"
+        },
+        {
+          "id": "D",
+          "text": "Keseragaman"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_113",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Garis khatulistiwa melewati wilayah Indonesia bagian ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tengah"
+        },
+        {
+          "id": "B",
+          "text": "Utara saja"
+        },
+        {
+          "id": "C",
+          "text": "Selatan saja"
+        },
+        {
+          "id": "D",
+          "text": "Barat saja"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_114",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Peta yang menunjukkan tinggi rendah permukaan tanah disebut peta ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Topografi"
+        },
+        {
+          "id": "B",
+          "text": "Cuaca"
+        },
+        {
+          "id": "C",
+          "text": "Jalan"
+        },
+        {
+          "id": "D",
+          "text": "Penduduk"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_115",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Gunung, sungai, dan danau adalah kenampakan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Alam"
+        },
+        {
+          "id": "B",
+          "text": "Buatan"
+        },
+        {
+          "id": "C",
+          "text": "Sosial"
+        },
+        {
+          "id": "D",
+          "text": "Ekonomi"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_116",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Jembatan dan waduk termasuk kenampakan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Buatan"
+        },
+        {
+          "id": "B",
+          "text": "Alam"
+        },
+        {
+          "id": "C",
+          "text": "Langit"
+        },
+        {
+          "id": "D",
+          "text": "Laut"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_117",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Kegiatan manusia yang menghasilkan padi disebut kegiatan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pertanian"
+        },
+        {
+          "id": "B",
+          "text": "Perdagangan"
+        },
+        {
+          "id": "C",
+          "text": "Pertambangan"
+        },
+        {
+          "id": "D",
+          "text": "Perikanan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_118",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Daerah yang banyak ditumbuhi pohon disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hutan"
+        },
+        {
+          "id": "B",
+          "text": "Gurun"
+        },
+        {
+          "id": "C",
+          "text": "Pantai"
+        },
+        {
+          "id": "D",
+          "text": "Kota"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_119",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Air laut terasa asin karena mengandung ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Garam"
+        },
+        {
+          "id": "B",
+          "text": "Gula"
+        },
+        {
+          "id": "C",
+          "text": "Minyak"
+        },
+        {
+          "id": "D",
+          "text": "Pasir"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_120",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Awan gelap dan angin kencang dapat menjadi tanda ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hujan"
+        },
+        {
+          "id": "B",
+          "text": "Gempa"
+        },
+        {
+          "id": "C",
+          "text": "Pelangi"
+        },
+        {
+          "id": "D",
+          "text": "Kekeringan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_121",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Benda yang dapat ditarik magnet adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kayu"
+        },
+        {
+          "id": "B",
+          "text": "Besi"
+        },
+        {
+          "id": "C",
+          "text": "Kertas"
+        },
+        {
+          "id": "D",
+          "text": "Kaca"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_122",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Es akan mencair jika ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Didinginkan"
+        },
+        {
+          "id": "B",
+          "text": "Dipanasan"
+        },
+        {
+          "id": "C",
+          "text": "Ditutup"
+        },
+        {
+          "id": "D",
+          "text": "Diguncang"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_123",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Hidung digunakan untuk ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mengecap"
+        },
+        {
+          "id": "B",
+          "text": "Mencium"
+        },
+        {
+          "id": "C",
+          "text": "Mendengar"
+        },
+        {
+          "id": "D",
+          "text": "Melihat"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_124",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Hewan yang menyusui anaknya disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mamalia"
+        },
+        {
+          "id": "B",
+          "text": "Reptil"
+        },
+        {
+          "id": "C",
+          "text": "Serangga"
+        },
+        {
+          "id": "D",
+          "text": "Ikan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_125",
+      "level": "pemula",
+      "subject": "IPA",
+      "difficulty": "easy",
+      "prompt": "Contoh benda cair adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Batu"
+        },
+        {
+          "id": "B",
+          "text": "Susu"
+        },
+        {
+          "id": "C",
+          "text": "Pensil"
+        },
+        {
+          "id": "D",
+          "text": "Meja"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_126",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Kata 'rumah' terdiri dari ... suku kata.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Satu"
+        },
+        {
+          "id": "B",
+          "text": "Dua"
+        },
+        {
+          "id": "C",
+          "text": "Tiga"
+        },
+        {
+          "id": "D",
+          "text": "Empat"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_127",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Lawan kata 'siang' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pagi"
+        },
+        {
+          "id": "B",
+          "text": "Malam"
+        },
+        {
+          "id": "C",
+          "text": "Terang"
+        },
+        {
+          "id": "D",
+          "text": "Cerah"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_128",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Orang yang mengajar di sekolah disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dokter"
+        },
+        {
+          "id": "B",
+          "text": "Guru"
+        },
+        {
+          "id": "C",
+          "text": "Petani"
+        },
+        {
+          "id": "D",
+          "text": "Nelayan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_129",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Kata yang menunjukkan jumlah disebut kata ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bilangan"
+        },
+        {
+          "id": "B",
+          "text": "Tanya"
+        },
+        {
+          "id": "C",
+          "text": "Kerja"
+        },
+        {
+          "id": "D",
+          "text": "Sifat"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_130",
+      "level": "pemula",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "easy",
+      "prompt": "Cerita yang tidak benar-benar terjadi disebut cerita ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nyata"
+        },
+        {
+          "id": "B",
+          "text": "Fiksi"
+        },
+        {
+          "id": "C",
+          "text": "Berita"
+        },
+        {
+          "id": "D",
+          "text": "Ilmiah"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_131",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Bahasa Inggris dari 'anjing' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dog"
+        },
+        {
+          "id": "B",
+          "text": "Cat"
+        },
+        {
+          "id": "C",
+          "text": "Bird"
+        },
+        {
+          "id": "D",
+          "text": "Fish"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_132",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Arti kata 'sun' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bulan"
+        },
+        {
+          "id": "B",
+          "text": "Matahari"
+        },
+        {
+          "id": "C",
+          "text": "Bintang"
+        },
+        {
+          "id": "D",
+          "text": "Awan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_133",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Kata Inggris untuk 'terima kasih' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sorry"
+        },
+        {
+          "id": "B",
+          "text": "Please"
+        },
+        {
+          "id": "C",
+          "text": "Thank you"
+        },
+        {
+          "id": "D",
+          "text": "Welcome"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_134",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Bahasa Inggris dari 'hijau' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yellow"
+        },
+        {
+          "id": "B",
+          "text": "Green"
+        },
+        {
+          "id": "C",
+          "text": "Brown"
+        },
+        {
+          "id": "D",
+          "text": "Orange"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_135",
+      "level": "pemula",
+      "subject": "Bahasa Inggris",
+      "difficulty": "easy",
+      "prompt": "Arti kata 'house' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sekolah"
+        },
+        {
+          "id": "B",
+          "text": "Rumah"
+        },
+        {
+          "id": "C",
+          "text": "Kebun"
+        },
+        {
+          "id": "D",
+          "text": "Jalan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_136",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Bekerja bersama membersihkan lingkungan disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gotong royong"
+        },
+        {
+          "id": "B",
+          "text": "Bermain"
+        },
+        {
+          "id": "C",
+          "text": "Bersaing"
+        },
+        {
+          "id": "D",
+          "text": "Berbohong"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_137",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Ketika berbeda pendapat, kita sebaiknya ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Memaksa"
+        },
+        {
+          "id": "B",
+          "text": "Bermusyawarah"
+        },
+        {
+          "id": "C",
+          "text": "Marah"
+        },
+        {
+          "id": "D",
+          "text": "Pergi"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_138",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Lagu kebangsaan Indonesia adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Indonesia Raya"
+        },
+        {
+          "id": "B",
+          "text": "Hari Merdeka"
+        },
+        {
+          "id": "C",
+          "text": "Garuda"
+        },
+        {
+          "id": "D",
+          "text": "Bagimu Negeri"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_139",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Contoh aturan di rumah adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tidur teratur"
+        },
+        {
+          "id": "B",
+          "text": "Membuang sampah sembarangan"
+        },
+        {
+          "id": "C",
+          "text": "Bertengkar"
+        },
+        {
+          "id": "D",
+          "text": "Berteriak"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_140",
+      "level": "pemula",
+      "subject": "PPKN",
+      "difficulty": "easy",
+      "prompt": "Mengantre dengan tertib menunjukkan sikap ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Disiplin"
+        },
+        {
+          "id": "B",
+          "text": "Malas"
+        },
+        {
+          "id": "C",
+          "text": "Iri"
+        },
+        {
+          "id": "D",
+          "text": "Sombong"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_141",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Wilayah berpasir di tepi laut disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pantai"
+        },
+        {
+          "id": "B",
+          "text": "Gunung"
+        },
+        {
+          "id": "C",
+          "text": "Lembah"
+        },
+        {
+          "id": "D",
+          "text": "Danau"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_142",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Air hujan yang turun ke tanah dapat mengisi ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Awan"
+        },
+        {
+          "id": "B",
+          "text": "Sungai"
+        },
+        {
+          "id": "C",
+          "text": "Bintang"
+        },
+        {
+          "id": "D",
+          "text": "Matahari"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_143",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Arah mata angin yang berlawanan dengan utara adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Timur"
+        },
+        {
+          "id": "B",
+          "text": "Barat"
+        },
+        {
+          "id": "C",
+          "text": "Selatan"
+        },
+        {
+          "id": "D",
+          "text": "Tenggara"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_144",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Tempat menanam padi disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sawah"
+        },
+        {
+          "id": "B",
+          "text": "Laut"
+        },
+        {
+          "id": "C",
+          "text": "Gurun"
+        },
+        {
+          "id": "D",
+          "text": "Kota"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_pemula_145",
+      "level": "pemula",
+      "subject": "Geografi",
+      "difficulty": "easy",
+      "prompt": "Pulau adalah daratan yang dikelilingi oleh ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gunung"
+        },
+        {
+          "id": "B",
+          "text": "Air"
+        },
+        {
+          "id": "C",
+          "text": "Jalan"
+        },
+        {
+          "id": "D",
+          "text": "Hutan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_146",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Alat untuk mengukur panjang adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Termometer"
+        },
+        {
+          "id": "B",
+          "text": "Penggaris"
+        },
+        {
+          "id": "C",
+          "text": "Neraca"
+        },
+        {
+          "id": "D",
+          "text": "Kompas"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_147",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Perubahan wujud dari padat menjadi cair disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Membeku"
+        },
+        {
+          "id": "B",
+          "text": "Mencair"
+        },
+        {
+          "id": "C",
+          "text": "Menguap"
+        },
+        {
+          "id": "D",
+          "text": "Mengembun"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_148",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Klorofil memberi warna ... pada daun.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Merah"
+        },
+        {
+          "id": "B",
+          "text": "Hijau"
+        },
+        {
+          "id": "C",
+          "text": "Biru"
+        },
+        {
+          "id": "D",
+          "text": "Putih"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_149",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Paru-paru berfungsi untuk ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mencerna"
+        },
+        {
+          "id": "B",
+          "text": "Bernapas"
+        },
+        {
+          "id": "C",
+          "text": "Memompa darah"
+        },
+        {
+          "id": "D",
+          "text": "Bergerak"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_150",
+      "level": "menengah",
+      "subject": "IPA",
+      "difficulty": "medium",
+      "prompt": "Bunyi dapat merambat melalui ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ruang hampa saja"
+        },
+        {
+          "id": "B",
+          "text": "Zat perantara"
+        },
+        {
+          "id": "C",
+          "text": "Cahaya saja"
+        },
+        {
+          "id": "D",
+          "text": "Bayangan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_151",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kalimat utama biasanya memuat ... paragraf.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gagasan pokok"
+        },
+        {
+          "id": "B",
+          "text": "Tanda baca"
+        },
+        {
+          "id": "C",
+          "text": "Nama penulis"
+        },
+        {
+          "id": "D",
+          "text": "Kata sambung"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_152",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kata baku yang tepat adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apotik"
+        },
+        {
+          "id": "B",
+          "text": "Apotek"
+        },
+        {
+          "id": "C",
+          "text": "Apoteq"
+        },
+        {
+          "id": "D",
+          "text": "Apotiek"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_153",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Pantun memiliki jumlah baris dalam satu bait sebanyak ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dua"
+        },
+        {
+          "id": "B",
+          "text": "Tiga"
+        },
+        {
+          "id": "C",
+          "text": "Empat"
+        },
+        {
+          "id": "D",
+          "text": "Lima"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_154",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kalimat 'Buku itu dibaca Sinta' termasuk kalimat ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Aktif"
+        },
+        {
+          "id": "B",
+          "text": "Pasif"
+        },
+        {
+          "id": "C",
+          "text": "Tanya"
+        },
+        {
+          "id": "D",
+          "text": "Perintah"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_155",
+      "level": "menengah",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "medium",
+      "prompt": "Kata 'pelari' berasal dari kata dasar ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lari"
+        },
+        {
+          "id": "B",
+          "text": "Layar"
+        },
+        {
+          "id": "C",
+          "text": "Lara"
+        },
+        {
+          "id": "D",
+          "text": "Lurus"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_156",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "The opposite of 'early' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Late"
+        },
+        {
+          "id": "B",
+          "text": "Fast"
+        },
+        {
+          "id": "C",
+          "text": "Near"
+        },
+        {
+          "id": "D",
+          "text": "First"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_157",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "Choose the correct plural: two ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "box"
+        },
+        {
+          "id": "B",
+          "text": "boxs"
+        },
+        {
+          "id": "C",
+          "text": "boxes"
+        },
+        {
+          "id": "D",
+          "text": "boxies"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_158",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "'Can you swim?' asks about ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ability"
+        },
+        {
+          "id": "B",
+          "text": "Color"
+        },
+        {
+          "id": "C",
+          "text": "Time"
+        },
+        {
+          "id": "D",
+          "text": "Place"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_159",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "The past form of 'eat' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Eated"
+        },
+        {
+          "id": "B",
+          "text": "Ate"
+        },
+        {
+          "id": "C",
+          "text": "Eating"
+        },
+        {
+          "id": "D",
+          "text": "Eaten"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_160",
+      "level": "menengah",
+      "subject": "Bahasa Inggris",
+      "difficulty": "medium",
+      "prompt": "Complete: There ... three books.",
+      "options": [
+        {
+          "id": "A",
+          "text": "is"
+        },
+        {
+          "id": "B",
+          "text": "am"
+        },
+        {
+          "id": "C",
+          "text": "are"
+        },
+        {
+          "id": "D",
+          "text": "be"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_161",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Sila keempat Pancasila dilambangkan kepala ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Banteng"
+        },
+        {
+          "id": "B",
+          "text": "Rantai"
+        },
+        {
+          "id": "C",
+          "text": "Padi"
+        },
+        {
+          "id": "D",
+          "text": "Bintang"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_162",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Lembaga pembuat undang-undang bersama presiden adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "DPR"
+        },
+        {
+          "id": "B",
+          "text": "BPK"
+        },
+        {
+          "id": "C",
+          "text": "KPU"
+        },
+        {
+          "id": "D",
+          "text": "MA"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_163",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Membayar pajak merupakan ... warga negara.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hak"
+        },
+        {
+          "id": "B",
+          "text": "Kewajiban"
+        },
+        {
+          "id": "C",
+          "text": "Hadiah"
+        },
+        {
+          "id": "D",
+          "text": "Larangan"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_164",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Keputusan bersama harus dilaksanakan dengan penuh ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tanggung jawab"
+        },
+        {
+          "id": "B",
+          "text": "Kemarahan"
+        },
+        {
+          "id": "C",
+          "text": "Paksaan"
+        },
+        {
+          "id": "D",
+          "text": "Kecurangan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_165",
+      "level": "menengah",
+      "subject": "PPKN",
+      "difficulty": "medium",
+      "prompt": "Menghormati ibadah orang lain mencerminkan toleransi ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Beragama"
+        },
+        {
+          "id": "B",
+          "text": "Berniaga"
+        },
+        {
+          "id": "C",
+          "text": "Bermain"
+        },
+        {
+          "id": "D",
+          "text": "Bekerja"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_166",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Skala pada peta menunjukkan perbandingan jarak peta dengan jarak ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sebenarnya"
+        },
+        {
+          "id": "B",
+          "text": "Tinggi"
+        },
+        {
+          "id": "C",
+          "text": "Laut"
+        },
+        {
+          "id": "D",
+          "text": "Waktu"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_167",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Gunung api dapat membentuk tanah yang ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Subur"
+        },
+        {
+          "id": "B",
+          "text": "Asin"
+        },
+        {
+          "id": "C",
+          "text": "Beku"
+        },
+        {
+          "id": "D",
+          "text": "Kering selalu"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_168",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Hutan mangrove banyak tumbuh di wilayah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pesisir"
+        },
+        {
+          "id": "B",
+          "text": "Pegunungan tinggi"
+        },
+        {
+          "id": "C",
+          "text": "Gurun"
+        },
+        {
+          "id": "D",
+          "text": "Kutub"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_169",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Alat untuk menunjukkan arah adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Kompas"
+        },
+        {
+          "id": "B",
+          "text": "Barometer"
+        },
+        {
+          "id": "C",
+          "text": "Termometer"
+        },
+        {
+          "id": "D",
+          "text": "Mikroskop"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_menengah_170",
+      "level": "menengah",
+      "subject": "Geografi",
+      "difficulty": "medium",
+      "prompt": "Sungai terpanjang biasanya mengalir dari hulu menuju ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Muara"
+        },
+        {
+          "id": "B",
+          "text": "Puncak"
+        },
+        {
+          "id": "C",
+          "text": "Gurun"
+        },
+        {
+          "id": "D",
+          "text": "Awan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_171",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Dorongan atau tarikan pada benda disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gaya"
+        },
+        {
+          "id": "B",
+          "text": "Suhu"
+        },
+        {
+          "id": "C",
+          "text": "Cahaya"
+        },
+        {
+          "id": "D",
+          "text": "Massa"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_172",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Dalam rantai makanan, tumbuhan berperan sebagai ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Produsen"
+        },
+        {
+          "id": "B",
+          "text": "Konsumen"
+        },
+        {
+          "id": "C",
+          "text": "Pengurai"
+        },
+        {
+          "id": "D",
+          "text": "Pemangsa"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_173",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Contoh sumber energi yang dapat diperbarui adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Minyak bumi"
+        },
+        {
+          "id": "B",
+          "text": "Batu bara"
+        },
+        {
+          "id": "C",
+          "text": "Matahari"
+        },
+        {
+          "id": "D",
+          "text": "Gas alam"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_174",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Bebek memiliki kaki berselaput agar dapat ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Berenang"
+        },
+        {
+          "id": "B",
+          "text": "Memanjat"
+        },
+        {
+          "id": "C",
+          "text": "Menggali"
+        },
+        {
+          "id": "D",
+          "text": "Terbang tinggi"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_175",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Makanan dicerna pertama kali di dalam ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mulut"
+        },
+        {
+          "id": "B",
+          "text": "Usus besar"
+        },
+        {
+          "id": "C",
+          "text": "Jantung"
+        },
+        {
+          "id": "D",
+          "text": "Paru-paru"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_176",
+      "level": "mahir",
+      "subject": "IPA",
+      "difficulty": "hard",
+      "prompt": "Planet yang dikenal sebagai Planet Merah adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Venus"
+        },
+        {
+          "id": "B",
+          "text": "Mars"
+        },
+        {
+          "id": "C",
+          "text": "Jupiter"
+        },
+        {
+          "id": "D",
+          "text": "Merkurius"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_177",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Teks yang menjelaskan suatu objek secara rinci disebut teks ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Deskripsi"
+        },
+        {
+          "id": "B",
+          "text": "Narasi"
+        },
+        {
+          "id": "C",
+          "text": "Drama"
+        },
+        {
+          "id": "D",
+          "text": "Pantun"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_178",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Pesan yang dapat diambil dari cerita disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amanat"
+        },
+        {
+          "id": "B",
+          "text": "Tokoh"
+        },
+        {
+          "id": "C",
+          "text": "Latar"
+        },
+        {
+          "id": "D",
+          "text": "Alur"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_179",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Lawan kata 'hemat' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Boros"
+        },
+        {
+          "id": "B",
+          "text": "Rajin"
+        },
+        {
+          "id": "C",
+          "text": "Cermat"
+        },
+        {
+          "id": "D",
+          "text": "Sederhana"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_180",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Persamaan kata 'gembira' adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sedih"
+        },
+        {
+          "id": "B",
+          "text": "Senang"
+        },
+        {
+          "id": "C",
+          "text": "Marah"
+        },
+        {
+          "id": "D",
+          "text": "Takut"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_181",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Kata tanya untuk menanyakan alasan adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Siapa"
+        },
+        {
+          "id": "B",
+          "text": "Kapan"
+        },
+        {
+          "id": "C",
+          "text": "Mengapa"
+        },
+        {
+          "id": "D",
+          "text": "Di mana"
+        }
+      ],
+      "answer": "C",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_182",
+      "level": "mahir",
+      "subject": "Bahasa Indonesia",
+      "difficulty": "hard",
+      "prompt": "Judul yang baik harus sesuai dengan ... bacaan.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Isi"
+        },
+        {
+          "id": "B",
+          "text": "Warna"
+        },
+        {
+          "id": "C",
+          "text": "Jumlah halaman"
+        },
+        {
+          "id": "D",
+          "text": "Nama penerbit"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_183",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "The opposite of 'clean' is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dirty"
+        },
+        {
+          "id": "B",
+          "text": "Bright"
+        },
+        {
+          "id": "C",
+          "text": "Soft"
+        },
+        {
+          "id": "D",
+          "text": "Young"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_184",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "Which word is a verb?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Beautiful"
+        },
+        {
+          "id": "B",
+          "text": "Run"
+        },
+        {
+          "id": "C",
+          "text": "Blue"
+        },
+        {
+          "id": "D",
+          "text": "Teacher"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_185",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "We use 'who' to ask about a ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Person"
+        },
+        {
+          "id": "B",
+          "text": "Place"
+        },
+        {
+          "id": "C",
+          "text": "Time"
+        },
+        {
+          "id": "D",
+          "text": "Reason"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_186",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "Complete: They ... football every Sunday.",
+      "options": [
+        {
+          "id": "A",
+          "text": "plays"
+        },
+        {
+          "id": "B",
+          "text": "play"
+        },
+        {
+          "id": "C",
+          "text": "playing"
+        },
+        {
+          "id": "D",
+          "text": "played"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_187",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "The possessive form for Rani is ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ranis"
+        },
+        {
+          "id": "B",
+          "text": "Rani's"
+        },
+        {
+          "id": "C",
+          "text": "Ranis'"
+        },
+        {
+          "id": "D",
+          "text": "Rani"
+        }
+      ],
+      "answer": "B",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_188",
+      "level": "mahir",
+      "subject": "Bahasa Inggris",
+      "difficulty": "hard",
+      "prompt": "A place where we borrow books is a ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Library"
+        },
+        {
+          "id": "B",
+          "text": "Kitchen"
+        },
+        {
+          "id": "C",
+          "text": "Airport"
+        },
+        {
+          "id": "D",
+          "text": "Farm"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_189",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Contoh sikap toleransi adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Menghormati teman beribadah"
+        },
+        {
+          "id": "B",
+          "text": "Mengejek keyakinan"
+        },
+        {
+          "id": "C",
+          "text": "Mengganggu upacara"
+        },
+        {
+          "id": "D",
+          "text": "Memaksa teman"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_190",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Aturan dibuat agar kehidupan menjadi ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Tertib"
+        },
+        {
+          "id": "B",
+          "text": "Kacau"
+        },
+        {
+          "id": "C",
+          "text": "Bebas tanpa batas"
+        },
+        {
+          "id": "D",
+          "text": "Berbahaya"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_191",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Pemilihan ketua kelas dengan pemungutan suara adalah contoh ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Demokrasi"
+        },
+        {
+          "id": "B",
+          "text": "Paksaan"
+        },
+        {
+          "id": "C",
+          "text": "Kecurangan"
+        },
+        {
+          "id": "D",
+          "text": "Permusuhan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_192",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Gotong royong dapat membuat pekerjaan menjadi ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lebih ringan"
+        },
+        {
+          "id": "B",
+          "text": "Lebih sulit"
+        },
+        {
+          "id": "C",
+          "text": "Tidak selesai"
+        },
+        {
+          "id": "D",
+          "text": "Tidak berguna"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_193",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Bahasa persatuan bangsa Indonesia adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bahasa Indonesia"
+        },
+        {
+          "id": "B",
+          "text": "Bahasa daerah"
+        },
+        {
+          "id": "C",
+          "text": "Bahasa asing"
+        },
+        {
+          "id": "D",
+          "text": "Bahasa isyarat"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_194",
+      "level": "mahir",
+      "subject": "PPKN",
+      "difficulty": "hard",
+      "prompt": "Lambang sila kelima Pancasila adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Padi dan kapas"
+        },
+        {
+          "id": "B",
+          "text": "Bintang"
+        },
+        {
+          "id": "C",
+          "text": "Rantai"
+        },
+        {
+          "id": "D",
+          "text": "Kepala banteng"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_195",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Bencana yang disebabkan pergerakan lempeng adalah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Gempa bumi"
+        },
+        {
+          "id": "B",
+          "text": "Banjir"
+        },
+        {
+          "id": "C",
+          "text": "Kebakaran"
+        },
+        {
+          "id": "D",
+          "text": "Kekeringan"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_196",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Menanam pohon di lereng dapat mencegah ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Longsor"
+        },
+        {
+          "id": "B",
+          "text": "Pasang laut"
+        },
+        {
+          "id": "C",
+          "text": "Gempa"
+        },
+        {
+          "id": "D",
+          "text": "Petir"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_197",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Kegiatan jual beli barang termasuk kegiatan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ekonomi"
+        },
+        {
+          "id": "B",
+          "text": "Sosial saja"
+        },
+        {
+          "id": "C",
+          "text": "Geologi"
+        },
+        {
+          "id": "D",
+          "text": "Cuaca"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_198",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Wilayah laut yang menjorok ke daratan disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Teluk"
+        },
+        {
+          "id": "B",
+          "text": "Selat"
+        },
+        {
+          "id": "C",
+          "text": "Tanjung"
+        },
+        {
+          "id": "D",
+          "text": "Delta"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_199",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Selat adalah laut sempit yang memisahkan ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dua pulau"
+        },
+        {
+          "id": "B",
+          "text": "Dua gunung"
+        },
+        {
+          "id": "C",
+          "text": "Dua awan"
+        },
+        {
+          "id": "D",
+          "text": "Dua sungai"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    },
+    {
+      "id": "knowledge_mahir_200",
+      "level": "mahir",
+      "subject": "Geografi",
+      "difficulty": "hard",
+      "prompt": "Arah antara utara dan timur disebut ...",
+      "options": [
+        {
+          "id": "A",
+          "text": "Timur laut"
+        },
+        {
+          "id": "B",
+          "text": "Tenggara"
+        },
+        {
+          "id": "C",
+          "text": "Barat laut"
+        },
+        {
+          "id": "D",
+          "text": "Barat daya"
+        }
+      ],
+      "answer": "A",
+      "reward": 100
+    }
+  ]
+}

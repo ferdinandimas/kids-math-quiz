@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.config import APP_TITLE
 from app.db.repo import Repo
-from app.domain.question_bank import build_banks
+from app.domain.question_bank import MATH_BANK_SPECS, build_knowledge_bank
 from app.services.session_service import SessionService
 from app.services.stats_service import StatsService
 from app.services.question_service import QuestionService
@@ -46,11 +46,15 @@ def create_app() -> FastAPI:
     repo = Repo()
     repo.init_db()
 
-    bank_v1, bank_v2, q_by_id = build_banks()
+    knowledge_bank = build_knowledge_bank()
 
     session_svc = SessionService(repo)
     stats_svc = StatsService(repo)
-    q_svc = QuestionService(stats_svc, bank_v1, bank_v2, q_by_id)
+    q_svc = QuestionService(
+        stats_svc,
+        {"alleia": MATH_BANK_SPECS[0], "althafandra": MATH_BANK_SPECS[1]},
+        knowledge_bank,
+    )
     admin_svc = AdminService(repo)
 
     app.include_router(build_router(session_svc, stats_svc, q_svc, admin_svc))

@@ -50,8 +50,9 @@ class SessionService:
     def get_stats(self, session_id: str):
         return self.repo.get_session(session_id)
 
-    def set_current_qid(self, session_id: str, qid):
-        self.repo.set_current_qid(session_id, qid)
+    def get_current_qid(self, session_id: str, child: str, quiz_type: str):
+        return self.repo.get_profile_current_qid(session_id, child, quiz_type)
 
-    def logout(self, session_id: str):
-        self.repo.logout_session(session_id)
+    def set_current_qid(self, session_id: str, qid, quiz_type: str | None = None, child: str | None = None):
+        self.repo.set_current_qid(session_id, qid, quiz_type, child)
+
