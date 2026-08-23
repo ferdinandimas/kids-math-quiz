@@ -45,8 +45,6 @@ def create_app() -> FastAPI:
 
     repo = Repo()
     repo.init_db()
-    repo.ensure_column("sessions", "answered_count", "INTEGER NOT NULL DEFAULT 0")
-    repo.ensure_column("child_daily", "answered_count", "INTEGER NOT NULL DEFAULT 0")
 
     bank_v1, bank_v2, q_by_id = build_banks()
 

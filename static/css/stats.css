@@ -1,0 +1,124 @@
+.stats-page {
+    min-height: 100vh;
+    padding: 14px;
+}
+
+.stats-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.stats-heading {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.stats-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.clear-button {
+    height: 38px;
+    padding: 0 12px;
+    background: rgba(255, 90, 90, 0.14);
+    border: 1px solid rgba(255, 120, 120, 0.26);
+    border-radius: 12px;
+    font-weight: 900;
+}
+
+.stats-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.stats-card {
+    padding: 12px;
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.stats-card-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stats-card-title h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.stats-totals {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.stats-mini {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+}
+
+.stats-mini-key {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.stats-mini-value {
+    margin-top: 4px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.stats-table {
+    width: 100%;
+    margin-top: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.stats-table th {
+    color: var(--muted);
+    font-weight: 900;
+}
+
+.stats-table .right {
+    text-align: right;
+}
+
+@media (max-width: 900px) {
+    .stats-wrap {
+        grid-template-columns: 1fr;
+    }
+}

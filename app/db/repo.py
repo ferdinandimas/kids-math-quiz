@@ -1,50 +1,13 @@
 from app.db.sqlite import db_conn
+from app.db.migrations import migrate
 
 class Repo:
     def init_db(self):
         conn = db_conn()
-        cur = conn.cursor()
-
-        cur.execute(
-            """
-            CREATE TABLE IF NOT EXISTS sessions (
-              session_id TEXT PRIMARY KEY,
-              child TEXT,
-              day TEXT,
-              served_count INTEGER NOT NULL DEFAULT 0,
-              answered_count INTEGER NOT NULL DEFAULT 0,
-              correct_count INTEGER NOT NULL DEFAULT 0,
-              earned INTEGER NOT NULL DEFAULT 0,
-              current_qid TEXT,
-              created_at TEXT NOT NULL
-            )
-            """
-        )
-
-        cur.execute(
-            """
-            CREATE TABLE IF NOT EXISTS child_daily (
-              child TEXT NOT NULL,
-              day TEXT NOT NULL,
-              served_count INTEGER NOT NULL DEFAULT 0,
-              answered_count INTEGER NOT NULL DEFAULT 0,
-              correct_count INTEGER NOT NULL DEFAULT 0,
-              earned INTEGER NOT NULL DEFAULT 0,
-              PRIMARY KEY (child, day)
-            )
-            """
-        )
-
-        conn.commit()
-        conn.close()
-
-    def ensure_column(self, table: str, col: str, col_def: str):
-        conn = db_conn()
-        cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})").fetchall()]
-        if col not in cols:
-            conn.execute(f"ALTER TABLE {table} ADD COLUMN {col} {col_def}")
-            conn.commit()
-        conn.close()
+        try:
+            migrate(conn)
+        finally:
+            conn.close()
 
     def clear_database(self):
         conn = db_conn()

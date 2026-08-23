@@ -30,12 +30,13 @@ pip install -r requirements.txt
 ### 3. Run the application
 
 ```bash
-uvicorn main:app --reload
+./run.sh
 ```
 
 ## Access
 
-- API: http://127.0.0.1:8000  
+- App: http://127.0.0.1:8000
+- Health check: http://127.0.0.1:8000/health
 - Swagger UI: http://127.0.0.1:8000/docs  
 - ReDoc: http://127.0.0.1:8000/redoc  
 
@@ -53,8 +54,24 @@ uvicorn main:app --reload
 
 - Intended for local development.
 - For production, remove `--reload` and bind to `0.0.0.0`.
-- Configuration should be managed via environment variables.
+- Configuration is managed with environment variables. Set `DB_PATH` to an
+  absolute path when persisting SQLite data outside the repository.
 - SQLite database is intentionally excluded from version control.
+
+## Railway
+
+`railway.toml` configures Railpack, runs the SQLite migration script before a
+deployment, starts `run.sh`, and uses `/health` as the deployment health check.
+
+Before the first deployment, add a Railway Volume mounted at `/data`, then set:
+
+```text
+DB_PATH=/data/math_app.sqlite3
+ADMIN_CLEAR_PASSWORD=<strong secret>
+```
+
+SQLite requires a persistent volume. Without it, Railway's ephemeral filesystem
+will discard quiz data whenever a deployment or restart creates a new container.
 
 ## License
 
