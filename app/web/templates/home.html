@@ -33,7 +33,8 @@
             </a>
         </div>
 
-        <a class="stats-link" href="/stats"><img class="stats-link-icon" src="/static/images/statistics-chart-icon.svg" alt="" aria-hidden="true"> Lihat Statistik</a>
+        <a class="stats-link" href="/stats"><img class="stats-link-icon" src="/static/images/statistics-chart-icon.svg" alt="" aria-hidden="true"> Lihat Statistik</a>{% if kidquest_entry %}
+        <a class="stats-link" href="/kidquest" data-testid="kidquest-entry"><img class="stats-link-icon" src="/static/images/star-mascot.png" alt="" aria-hidden="true"> {{ kidquest_entry }}</a>{% endif %}
     </section>
 </main>
 {% endblock %}

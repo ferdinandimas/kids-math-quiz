@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    {#- Unlike base.html, zoom stays allowed: KidQuest must survive 200% text and pinch zoom (PRD 11.13). -#}
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/static/icon-512.png">
+    <link rel="apple-touch-icon" href="/static/icon-512.png">
+    <meta name="theme-color" content="#070b14">
+    <title>{{ strings.shell.page_title }} · {{ name }}</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/kidquest-tokens.css">
+    <link rel="stylesheet" href="/static/css/kidquest.css">
+</head>
+<body class="kq-page">
+    <a class="skip-link" href="#main">{{ strings.shell.skip_link }}</a>
+
+    {#- Rendered by kidquest.js from the server state; the first paint is the loading skeleton. -#}
+    <div id="app" class="kq-app profile-theme-{{ accent }}" data-view="world" data-view-kind="world">
+        <main id="main" class="kq-boot-loading" tabindex="-1" aria-busy="true">
+            <p class="muted">{{ strings.load.loading }}</p>
+        </main>
+    </div>
+
+    <div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <div id="dialog-root"></div>
+
+    <script id="kq-boot" type="application/json">{{ boot | tojson }}</script>
+    <script src="/static/js/kidquest.js" defer></script>
+</body>
+</html>

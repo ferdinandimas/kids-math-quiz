@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "layout_id": "pulau_tunas_v1",
+  "content_version": 1,
+  "width": 8,
+  "height": 8,
+  "coordinates": {
+    "origin": "north_west",
+    "x_axis": "east",
+    "y_axis": "south",
+    "position": "footprint_top_left",
+    "zone_rectangles": "x,y is the top-left cell; width along x, height along y; inclusive of x..x+width-1 and y..y+height-1"
+  },
+  "default_terrain": "ground_buildable",
+  "water": [
+    {
+      "x": 3,
+      "y": 4
+    },
+    {
+      "x": 4,
+      "y": 4
+    },
+    {
+      "x": 5,
+      "y": 4
+    },
+    {
+      "x": 6,
+      "y": 4
+    },
+    {
+      "x": 7,
+      "y": 4
+    },
+    {
+      "x": 3,
+      "y": 5
+    },
+    {
+      "x": 4,
+      "y": 5
+    },
+    {
+      "x": 5,
+      "y": 5
+    },
+    {
+      "x": 6,
+      "y": 5
+    },
+    {
+      "x": 7,
+      "y": 5
+    },
+    {
+      "x": 3,
+      "y": 6
+    },
+    {
+      "x": 3,
+      "y": 7
+    }
+  ],
+  "fixed_objects": [
+    {
+      "id": "tree_north_west",
+      "kind": "blocked_tree",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "tree_north_east",
+      "kind": "blocked_tree",
+      "x": 7,
+      "y": 0
+    },
+    {
+      "id": "quest_board",
+      "kind": "quest_board",
+      "x": 4,
+      "y": 3
+    },
+    {
+      "id": "rock_south_west",
+      "kind": "blocked_rock",
+      "x": 0,
+      "y": 7
+    },
+    {
+      "id": "tree_south_east",
+      "kind": "blocked_tree",
+      "x": 7,
+      "y": 7
+    }
+  ],
+  "zones": {
+    "tutorial_zone": {
+      "x": 1,
+      "y": 1,
+      "width": 4,
+      "height": 2
+    },
+    "bridge_zone": {
+      "x": 5,
+      "y": 4,
+      "width": 1,
+      "height": 2
+    },
+    "expansion_zone": {
+      "x": 4,
+      "y": 6,
+      "width": 4,
+      "height": 2,
+      "unlocked_by_quest": "Q005"
+    }
+  }
+}

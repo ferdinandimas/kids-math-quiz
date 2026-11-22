@@ -1,9 +1,10 @@
 #!/usr/bin/env sh
 set -eu
 
+APP_DIR="${APP_DIR:-/app}"
 DATA_DIR="$(dirname "${DB_PATH:-/data/kids-quiz/kids-quiz.sqlite3}")"
 DB_PATH="${DB_PATH:-/data/kids-quiz/kids-quiz.sqlite3}"
-SEED_DB="/app/seed/kids-quiz.sqlite3"
+SEED_DB="${SEED_DB:-$APP_DIR/seed/kids-quiz.sqlite3}"
 
 mkdir -p "$DATA_DIR"
 
@@ -14,6 +15,7 @@ if [ ! -f "$DB_PATH" ]; then
 fi
 
 export DB_PATH
-python /app/scripts/migrate.py
+# Migrations never need ADMIN_CLEAR_PASSWORD; the app checks it at startup.
+python "$APP_DIR/scripts/migrate.py"
 
 exec "$@"

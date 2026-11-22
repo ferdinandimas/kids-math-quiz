@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>KQ-029 building QA gallery</title>
+<link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="kq029.css">
+</head>
+<body class="show-bounds show-anchor">
+<header class="g-header">
+  <div>
+    <p class="eyebrow">KQ-029 · development QA only · not linked from the app</p>
+    <h1>Building extraction and state gallery</h1>
+    <p class="warn">Lossless 512 × 512 extracts. <strong>Product-owner art and cultural review remain pending.</strong></p>
+  </div>
+  <div class="controls" role="group" aria-label="Gallery controls">
+    <fieldset><legend>State matrix theme</legend><div id="theme-switch" class="seg"></div></fieldset>
+  </div>
+</header>
+<nav class="g-nav" aria-label="Sections"><a href="#cross-theme">Cross-theme geometry</a><a href="#states">UI state composition</a></nav>
+<main>
+  <section id="cross-theme" class="card">
+    <h2>Six logical buildings × three themes</h2>
+    <p class="help">Green = frozen footprint, pink cross = anchor (256, 464), cyan markers = entrance endpoints. The artwork remains untouched.</p>
+    <div id="cross-theme-out" class="building-matrix"></div>
+  </section>
+  <section id="states" class="card">
+    <h2>UI state composition matrix</h2>
+    <p class="help">Selection and placement treatments use shared overlays; locked is a contextual dim. The productive badge is a separate DOM overlay and is never baked into a sprite.</p>
+    <div id="states-out" class="state-matrix"></div>
+  </section>
+</main>
+<script src="kq029-data.js"></script>
+<script src="kq029.js"></script>
+</body>
+</html>

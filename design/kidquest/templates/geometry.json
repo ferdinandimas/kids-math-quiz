@@ -1,0 +1,107 @@
+{
+  "cell_px_at_2x": 128,
+  "css_px_per_cell": {
+    "min": 38,
+    "max": 64,
+    "rule": "clamp(38px, 10vw, 64px)"
+  },
+  "css_cell_size_reading": "manifest css_cell_size = intended CSS px at the 64 px maximum cell = pixel_size / 2",
+  "road": {
+    "surface_half_width_px": 24,
+    "border_px": 6,
+    "band_px": [
+      34,
+      93
+    ],
+    "inner_fillet_px": 14,
+    "open_edge_clear_px": 8,
+    "bits": {
+      "N": 1,
+      "E": 2,
+      "S": 4,
+      "W": 8
+    }
+  },
+  "shore": {
+    "land_strip_px": 18,
+    "bank_to_px": 28,
+    "foam_px": 3,
+    "concave_fillet_px": 10,
+    "mask_meaning": "water cell; bit set = land inside the map on that side (roads.shore_mask)"
+  },
+  "quest_board": {
+    "canvas_px": [
+      128,
+      192
+    ],
+    "footprint": [
+      1,
+      1
+    ],
+    "anchor": [
+      0.5,
+      1
+    ],
+    "overhang_top": 0.5,
+    "contact_row_px": 184
+  },
+  "graybox_buildings_proposal_for_KQ025": {
+    "2x2": {
+      "footprint": [
+        2,
+        2
+      ],
+      "overhang_top": 1.0,
+      "canvas_px": [
+        256,
+        384
+      ],
+      "anchor": [
+        1.0,
+        2
+      ],
+      "entrances": [
+        "S"
+      ]
+    },
+    "1x2": {
+      "footprint": [
+        1,
+        2
+      ],
+      "overhang_top": 0.25,
+      "canvas_px": [
+        128,
+        288
+      ],
+      "anchor": [
+        0.5,
+        2
+      ],
+      "entrances": [
+        "N",
+        "S"
+      ]
+    },
+    "1x1": {
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang_top": 0.75,
+      "canvas_px": [
+        128,
+        224
+      ],
+      "anchor": [
+        0.5,
+        1
+      ],
+      "entrances": [
+        "S"
+      ]
+    }
+  },
+  "lighting": "upper-left, one shared angle",
+  "status": "KQ-006 proposal; KQ-025 freezes building geometry"
+}

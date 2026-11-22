@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "analysis_version": "draft-sensitivity-v1",
+  "approval_status": "draft_not_approved",
+  "max_combinations": 500,
+  "report_top": 20,
+  "axes": {
+    "investment_denomination_rp": [2000, 3000, 4000],
+    "resource_price_percent": [75, 100, 125],
+    "supply_price_percent": [75, 100, 125],
+    "daily_income_percent": [75, 100, 125],
+    "monthly_cashout_liability_rp": [5000, 10000]
+  },
+  "targets": {
+    "regular_first_productive_min_day": 3,
+    "regular_first_productive_max_day": 5,
+    "regular_all_buildings_max_day": 30,
+    "light_all_buildings_max_day": 90,
+    "payback_min_days": 14,
+    "payback_max_days": 30
+  },
+  "penalty_weights": {
+    "first_productive_day": 100,
+    "regular_all_buildings_day": 25,
+    "light_all_buildings_day": 10,
+    "payback_day": 10,
+    "structural_warning": 1000,
+    "cashout_exposure_per_100_rp": 1
+  }
+}
+

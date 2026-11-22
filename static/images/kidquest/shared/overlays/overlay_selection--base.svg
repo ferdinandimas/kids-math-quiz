@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- KidQuest shared overlay: Selected cell or object. Non-colour cue: four corner brackets. -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 40V8h32M88 8h32v32M120 88v32H88M40 120H8V88" stroke="#1d2420" stroke-width="13"/>
+    <path d="M8 40V8h32M88 8h32v32M120 88v32H88M40 120H8V88" stroke="#ffbd16" stroke-width="7"/>
+  </g>
+</svg>

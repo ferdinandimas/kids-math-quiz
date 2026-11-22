@@ -1,0 +1,5 @@
+# Design-time asset tooling only (KQ-006). Never installed in production or needed by the app/tests.
+# Used by design/kidquest/tools/generate_golden_assets.py and render_proofs.py.
+# The committed WebP files under static/images/kidquest/ are the runtime source of truth.
+Pillow==10.4.0
+numpy==1.26.4

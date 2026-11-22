@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- KidQuest shared overlay: Building reaches the quest board by road. Non-colour cue: link badge with joined path. -->
+  <circle cx="104" cy="104" r="18" fill="#0a2a66" stroke="#ffffff" stroke-width="3"/>
+  <path d="M92 104h24" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="92" cy="104" r="4.5" fill="#ffffff"/><circle cx="116" cy="104" r="4.5" fill="#ffffff"/>
+</svg>

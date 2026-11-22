@@ -1,0 +1,251 @@
+{
+  "$schema": "./building_sprite_map.schema.json",
+  "schema_version": 1,
+  "contract_id": "building_sprite_map.v1",
+  "contract_version": 1,
+  "status": "frozen",
+  "canvas": {
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG",
+    "color_mode": "RGBA",
+    "color_space": "sRGB",
+    "background": "fully_transparent",
+    "grid": {
+      "columns": 3,
+      "rows": 2,
+      "slot_width": 512,
+      "slot_height": 512,
+      "gutter": 0
+    },
+    "fallback_generation_size": {
+      "width": 3072,
+      "height": 2048,
+      "downscale_percent": 50,
+      "rule": "downscale_exactly; never crop, pad, stretch, or scale non-uniformly"
+    }
+  },
+  "geometry": {
+    "world_cell_px_at_2x": 128,
+    "anchor": {
+      "x": 256,
+      "y": 464
+    },
+    "safe_padding_px": 32,
+    "safe_bounds": {
+      "x1": 32,
+      "y1": 32,
+      "x2": 480,
+      "y2": 480
+    },
+    "shadow_limit_y": 480,
+    "responsive_proof_cell_px": [
+      38,
+      48,
+      64
+    ]
+  },
+  "camera": {
+    "view": "three_quarter_front",
+    "viewer_position": "south_looking_north_and_down",
+    "south_faces_parallel_to_canvas": true,
+    "perspective_convergence": false,
+    "vertical_edges_vertical": true,
+    "footprint_projection": "screen_space_rectangle"
+  },
+  "lighting": {
+    "key_direction": "upper_left_north_west",
+    "cast_shadow_direction": "lower_right",
+    "single_shared_angle": true
+  },
+  "outline": {
+    "unit": "source_px_at_2x",
+    "minimum": 4,
+    "maximum": 8,
+    "rule": "Choose one weight in this range per theme map and use it consistently on all six buildings."
+  },
+  "alpha_edge_rules": {
+    "background_alpha": 0,
+    "background_rgb_when_alpha_zero": [
+      0,
+      0,
+      0
+    ],
+    "allow_partial_alpha_for": [
+      "anti_aliased_object_edges",
+      "ground_shadows"
+    ],
+    "semi_transparent_background_allowed": false,
+    "matte_halo_allowed": false,
+    "content_outside_safe_bounds_allowed": false
+  },
+  "overhang_profiles": {
+    "2x2": {
+      "top_cells": 1.0,
+      "top_px": 128
+    },
+    "1x2": {
+      "top_cells": 0.25,
+      "top_px": 32
+    },
+    "1x1": {
+      "top_cells": 0.75,
+      "top_px": 96
+    }
+  },
+  "theme_ids": [
+    "perkampungan",
+    "kingdom",
+    "city"
+  ],
+  "slots": [
+    {
+      "slot": 1,
+      "row": 1,
+      "column": 1,
+      "rect": {"x": 0, "y": 0, "width": 512, "height": 512},
+      "logical_id": "starter_house",
+      "footprint": {"width": 2, "height": 2},
+      "footprint_rect": {"x1": 128, "y1": 208, "x2": 384, "y2": 464},
+      "anchor": {"x": 256, "y": 464},
+      "entrances": [
+        {"side": "S", "x": 256, "y": 464}
+      ]
+    },
+    {
+      "slot": 2,
+      "row": 1,
+      "column": 2,
+      "rect": {"x": 512, "y": 0, "width": 512, "height": 512},
+      "logical_id": "garden",
+      "footprint": {"width": 2, "height": 2},
+      "footprint_rect": {"x1": 128, "y1": 208, "x2": 384, "y2": 464},
+      "anchor": {"x": 256, "y": 464},
+      "entrances": [
+        {"side": "S", "x": 256, "y": 464}
+      ]
+    },
+    {
+      "slot": 3,
+      "row": 1,
+      "column": 3,
+      "rect": {"x": 1024, "y": 0, "width": 512, "height": 512},
+      "logical_id": "bakery",
+      "footprint": {"width": 2, "height": 2},
+      "footprint_rect": {"x1": 128, "y1": 208, "x2": 384, "y2": 464},
+      "anchor": {"x": 256, "y": 464},
+      "entrances": [
+        {"side": "S", "x": 256, "y": 464}
+      ]
+    },
+    {
+      "slot": 4,
+      "row": 2,
+      "column": 1,
+      "rect": {"x": 0, "y": 512, "width": 512, "height": 512},
+      "logical_id": "park",
+      "footprint": {"width": 2, "height": 2},
+      "footprint_rect": {"x1": 128, "y1": 208, "x2": 384, "y2": 464},
+      "anchor": {"x": 256, "y": 464},
+      "entrances": [
+        {"side": "S", "x": 256, "y": 464}
+      ]
+    },
+    {
+      "slot": 5,
+      "row": 2,
+      "column": 2,
+      "rect": {"x": 512, "y": 512, "width": 512, "height": 512},
+      "logical_id": "bridge",
+      "footprint": {"width": 1, "height": 2},
+      "long_axis": "north_south",
+      "footprint_rect": {"x1": 192, "y1": 208, "x2": 320, "y2": 464},
+      "anchor": {"x": 256, "y": 464},
+      "entrances": [
+        {"side": "N", "x": 256, "y": 208},
+        {"side": "S", "x": 256, "y": 464}
+      ]
+    },
+    {
+      "slot": 6,
+      "row": 2,
+      "column": 3,
+      "rect": {"x": 1024, "y": 512, "width": 512, "height": 512},
+      "logical_id": "market_stall",
+      "footprint": {"width": 1, "height": 1},
+      "footprint_rect": {"x1": 192, "y1": 336, "x2": 320, "y2": 464},
+      "anchor": {"x": 256, "y": 464},
+      "entrances": [
+        {"side": "S", "x": 256, "y": 464}
+      ]
+    }
+  ],
+  "graybox_palette_rgba": {
+    "mass": [150, 155, 160, 255],
+    "footprint": [92, 132, 172, 255],
+    "footprint_outline": [48, 76, 104, 255],
+    "anchor": [205, 72, 112, 255],
+    "entrance": [58, 156, 98, 255],
+    "safe_padding": [112, 118, 124, 255],
+    "shadow_limit": [72, 78, 84, 255]
+  },
+  "visual_checklist": {
+    "shared": [
+      "Reads as a friendly children's product at 38, 48, and 64 px per world cell.",
+      "Uses the theme's material language without changing silhouette scale, footprint, anchor, entrance, camera, or light.",
+      "Contains no currency symbols, coins, banknotes, prices, payment terminals, cash registers, advertising, brand marks, or payout cues.",
+      "Uses no baked-in words or labels; meaning comes from silhouette and objects.",
+      "Keeps entrances and connection ends unobstructed and readable.",
+      "Receives human Indonesian cultural review; automated validation does not approve cultural accuracy."
+    ],
+    "per_building": {
+      "starter_house": {
+        "theme_variants": {"kingdom": "Keeper's Cottage", "city": "Colorful Townhouse", "perkampungan": "Rumah Kampung"},
+        "required_cues": ["safe welcoming home", "clear south door", "first-achievement landmark"],
+        "prohibited_cues": ["money or payout", "shopfront", "production machinery", "damage or danger"]
+      },
+      "garden": {
+        "theme_variants": {"kingdom": "Royal Herb Garden", "city": "Community Garden", "perkampungan": "Kebun Tunas"},
+        "required_cues": ["countable planting groups", "accessible plot boundary", "clear south entrance"],
+        "prohibited_cues": ["money or payout", "sale signs", "hazardous tools", "unreadable dense foliage"]
+      },
+      "bakery": {
+        "theme_variants": {"kingdom": "Castle Bakehouse", "city": "City Bakery", "perkampungan": "Warung Roti"},
+        "required_cues": ["bread or oven purpose without text", "clear south door", "friendly food preparation"],
+        "prohibited_cues": ["money or prices", "brands or advertising", "dangerous open flames", "factory-scale machinery"]
+      },
+      "park": {
+        "theme_variants": {"kingdom": "Royal Garden", "city": "City Park", "perkampungan": "Lapangan Kampung"},
+        "required_cues": ["open community space", "pattern-friendly arrangement", "clear south entrance"],
+        "prohibited_cues": ["money or payout", "vendor or shop cues", "production cues", "entrance-blocking decoration"]
+      },
+      "bridge": {
+        "theme_variants": {"kingdom": "Stone Story Bridge", "city": "Pedestrian City Bridge", "perkampungan": "Jembatan Kayu-Bambu"},
+        "required_cues": ["open north and south connection ends", "one-cell-wide two-cell-long deck", "water-safe pedestrian crossing"],
+        "prohibited_cues": ["toll or money cues", "vehicle roadway", "blocked connection ends", "unsafe broken structure"]
+      },
+      "market_stall": {
+        "theme_variants": {"kingdom": "Royal Bazaar Stall", "city": "City Kiosk", "perkampungan": "Kios Pasar"},
+        "required_cues": ["countable displayed items", "small one-cell scale", "clear south entrance"],
+        "prohibited_cues": ["currency or prices", "advertising or brands", "child trading or automatic payment", "casino or gambling cues"]
+      }
+    }
+  },
+  "generation": {
+    "revision_policy": "Every revision outputs the complete six-slot map. Name the failing slot in feedback, but never transplant, independently rescale, crop, or patch a single building from another generation.",
+    "required_provenance_fields": [
+      "creator",
+      "model_or_tool",
+      "model_or_tool_version",
+      "generation_date",
+      "prompt_revision",
+      "contract_id",
+      "source_graybox",
+      "seed_or_job_id",
+      "rights_or_license_status",
+      "human_cultural_review_status",
+      "art_review_status",
+      "post_generation_edits"
+    ]
+  }
+}

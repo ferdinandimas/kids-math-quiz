@@ -1,0 +1,72 @@
+PASS [entry] home without a selected child has no KidQuest entry
+PASS [entry] quiz header shows the KidQuest entry for an allowlisted child
+PASS [entry] home shows the KidQuest entry once the child is chosen
+PASS [world] server state drives the page (Q001 available)
+PASS [world] 8x8 grid of cells
+PASS [world] tile size follows clamp(38px, 10vw, 64px)
+PASS [world] objective names the first quest
+PASS [world] no resume card for a brand-new child
+PASS [world] quest board badge (icon + text)
+PASS [world] world visuals come from the theme manifest or the neutral placeholder
+PASS [world] no development asset errors — []
+PASS [world] no missing UI strings
+PASS [world] grid has one tab stop
+PASS [world] no horizontal overflow (world 360) — scrollWidth 360, viewport 360
+PASS [world] touch targets >= 44 px (world 360)
+PASS [world] arrow keys move focus across the grid — cell-4-3 -> cell-5-3
+PASS [world] grid focus ring is the navy world focus
+PASS [quest] quest view shows the story from the API
+PASS [quest] reward preview has no amount before a correct answer
+PASS [quest] focus moves to the quest heading
+PASS [challenge] challenge prompt from the API
+PASS [challenge] no reward amount on the challenge screen
+PASS [challenge] step text from content
+PASS [challenge] keypad last row is Hapus · 0 · Kirim
+PASS [challenge] Kirim is disabled until a digit is entered
+PASS [challenge] no horizontal overflow (challenge 360) — scrollWidth 360, viewport 360
+PASS [challenge] touch targets >= 44 px (challenge 360)
+PASS [wrong answer] wrong popup uses the server hint (level 1)
+PASS [wrong answer] focus moves into the popup
+PASS [wrong answer] no red cross icon on the wrong popup
+PASS [wrong answer] Tab stays inside the popup
+PASS [wrong answer] focus returns to the answer box
+PASS [wrong answer] hint stays under the question
+PASS [wrong answer] worked example numbers the empty slots
+PASS [reward] reward message from the API
+PASS [reward] reward pills: 4 kayu and the blueprint, no coin
+PASS [reward] server moved Q001 to READY_TO_BUILD with 4 wood
+PASS [resume after refresh] resume card: Sejak Kunjungan Terakhir
+PASS [resume after refresh] resume offers the safe next step (build)
+PASS [resume after refresh] refresh did not duplicate the reward
+PASS [placement] build mode banner says nothing changes yet
+PASS [placement] invalid placement shows the server message — Tidak bisa membangun di atas air. Pilih tanah.
+PASS [placement] confirm stays disabled on an invalid spot
+PASS [placement] D11: a tap on any striped cell picks the covering footprint (top-left 3,1)
+PASS [placement] nudge buttons move the footprint
+PASS [placement] state unchanged before confirm
+PASS [placement] touch targets >= 44 px (placement 360)
+PASS [build] house built where chosen; Q001 completed; wood spent
+PASS [build] building drawn on the map
+PASS [theme] preview is local (no request, state unchanged)
+PASS [theme] theme saved; buildings, inventory, quests, attempts unchanged
+PASS [theme] world art now resolves from the city pack
+PASS [theme failure] failure restores the authoritative theme
+PASS [theme failure] retry offered and focused
+PASS [theme failure] retry applies the same choice
+PASS [menu] completed world: theme intro done, quiz offered
+PASS [menu] menu keeps Quiz and Statistics reachable
+PASS [menu] touch targets >= 44 px (menu 360)
+PASS [menu] focus returns to the menu button
+PASS [reduced motion] reduced motion removes transitions
+PASS [lost response] blue accent for the second child
+PASS [lost response] lost response shows "Memeriksa perubahan" and keeps the key
+PASS [lost response] the answer was counted once (same key replayed) — {"day":"2026-11-22","used":1,"limit":3,"remaining":2,"resets_at":"2026-11-23T00:00:00+07:00"}
+PASS [daily cap] daily cap: calm message, keypad disabled
+PASS [daily cap] no urgency or streak wording
+PASS [daily cap] cap persists after refresh as a calm objective
+PASS [offline] offline banner says the world is safe
+PASS [load error] load error offers a retry and says nothing is lost
+PASS [200% text] no horizontal overflow (world at 200% text, 360) — scrollWidth 360, viewport 360
+PASS [200% text] no horizontal overflow (missions at 200% text, 360) — scrollWidth 360, viewport 360
+
+70/70 checks passed.

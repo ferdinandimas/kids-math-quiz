@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "parameter_version": "draft-v1",
+  "approval_status": "draft_not_approved",
+  "currency": "IDR_integer",
+  "answer_reward_rp": 50,
+  "investment": {
+    "denomination_rp": 3000,
+    "savings_percent": 25,
+    "builder_credit_percent": 75
+  },
+  "resource_prices_rp": {
+    "wood": 200,
+    "stone": 300
+  },
+  "limits": {
+    "daily_building_income_rp": 200,
+    "monthly_building_income_rp": 3000,
+    "income_accumulation_cap_rp": 5000,
+    "monthly_cashout_liability_rp": 5000
+  },
+  "historical_balances_rp": [
+    5000,
+    50000
+  ],
+  "buildings": [
+    {
+      "id": "garden",
+      "blueprint_correct_answers": 45,
+      "resource_cost": {"wood": 2},
+      "productive": true,
+      "supply": {"pack_price_rp": 150, "active_days": 3},
+      "daily_income_rp": 25
+    },
+    {
+      "id": "bakery",
+      "blueprint_correct_answers": 90,
+      "resource_cost": {"wood": 3, "stone": 1},
+      "productive": true,
+      "supply": {"pack_price_rp": 225, "active_days": 3},
+      "daily_income_rp": 50
+    },
+    {
+      "id": "park",
+      "blueprint_correct_answers": 135,
+      "resource_cost": {"wood": 2, "stone": 2},
+      "productive": false,
+      "supply": null,
+      "daily_income_rp": null
+    },
+    {
+      "id": "bridge",
+      "blueprint_correct_answers": 180,
+      "resource_cost": {"wood": 3, "stone": 2},
+      "productive": false,
+      "supply": null,
+      "daily_income_rp": null
+    },
+    {
+      "id": "market_stall",
+      "blueprint_correct_answers": 225,
+      "resource_cost": {"wood": 2, "stone": 1},
+      "productive": true,
+      "supply": {"pack_price_rp": 300, "active_days": 3},
+      "daily_income_rp": 50
+    }
+  ]
+}
+

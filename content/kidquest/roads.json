@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "road_type": "basic_road",
+  "bit_order": "NESW",
+  "bits": {
+    "N": 1,
+    "E": 2,
+    "S": 4,
+    "W": 8
+  },
+  "max_segments_per_world": 48,
+  "unlocked_by_quest": "Q003",
+  "road_masks": [
+    {
+      "mask": 0,
+      "connections": [],
+      "shape": "isolated",
+      "asset_id": "road_basic--mask_00"
+    },
+    {
+      "mask": 1,
+      "connections": [
+        "N"
+      ],
+      "shape": "end_cap_north",
+      "asset_id": "road_basic--mask_01"
+    },
+    {
+      "mask": 2,
+      "connections": [
+        "E"
+      ],
+      "shape": "end_cap_east",
+      "asset_id": "road_basic--mask_02"
+    },
+    {
+      "mask": 3,
+      "connections": [
+        "N",
+        "E"
+      ],
+      "shape": "corner_north_east",
+      "asset_id": "road_basic--mask_03"
+    },
+    {
+      "mask": 4,
+      "connections": [
+        "S"
+      ],
+      "shape": "end_cap_south",
+      "asset_id": "road_basic--mask_04"
+    },
+    {
+      "mask": 5,
+      "connections": [
+        "N",
+        "S"
+      ],
+      "shape": "straight_vertical",
+      "asset_id": "road_basic--mask_05"
+    },
+    {
+      "mask": 6,
+      "connections": [
+        "E",
+        "S"
+      ],
+      "shape": "corner_south_east",
+      "asset_id": "road_basic--mask_06"
+    },
+    {
+      "mask": 7,
+      "connections": [
+        "N",
+        "E",
+        "S"
+      ],
+      "shape": "t_junction_east",
+      "asset_id": "road_basic--mask_07"
+    },
+    {
+      "mask": 8,
+      "connections": [
+        "W"
+      ],
+      "shape": "end_cap_west",
+      "asset_id": "road_basic--mask_08"
+    },
+    {
+      "mask": 9,
+      "connections": [
+        "N",
+        "W"
+      ],
+      "shape": "corner_north_west",
+      "asset_id": "road_basic--mask_09"
+    },
+    {
+      "mask": 10,
+      "connections": [
+        "E",
+        "W"
+      ],
+      "shape": "straight_horizontal",
+      "asset_id": "road_basic--mask_10"
+    },
+    {
+      "mask": 11,
+      "connections": [
+        "N",
+        "E",
+        "W"
+      ],
+      "shape": "t_junction_north",
+      "asset_id": "road_basic--mask_11"
+    },
+    {
+      "mask": 12,
+      "connections": [
+        "S",
+        "W"
+      ],
+      "shape": "corner_south_west",
+      "asset_id": "road_basic--mask_12"
+    },
+    {
+      "mask": 13,
+      "connections": [
+        "N",
+        "S",
+        "W"
+      ],
+      "shape": "t_junction_west",
+      "asset_id": "road_basic--mask_13"
+    },
+    {
+      "mask": 14,
+      "connections": [
+        "E",
+        "S",
+        "W"
+      ],
+      "shape": "t_junction_south",
+      "asset_id": "road_basic--mask_14"
+    },
+    {
+      "mask": 15,
+      "connections": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "shape": "four_way",
+      "asset_id": "road_basic--mask_15"
+    }
+  ],
+  "shore_masks": [
+    {
+      "mask": 0,
+      "land_sides": [],
+      "asset_id": "shore--mask_00"
+    },
+    {
+      "mask": 1,
+      "land_sides": [
+        "N"
+      ],
+      "asset_id": "shore--mask_01"
+    },
+    {
+      "mask": 2,
+      "land_sides": [
+        "E"
+      ],
+      "asset_id": "shore--mask_02"
+    },
+    {
+      "mask": 3,
+      "land_sides": [
+        "N",
+        "E"
+      ],
+      "asset_id": "shore--mask_03"
+    },
+    {
+      "mask": 4,
+      "land_sides": [
+        "S"
+      ],
+      "asset_id": "shore--mask_04"
+    },
+    {
+      "mask": 5,
+      "land_sides": [
+        "N",
+        "S"
+      ],
+      "asset_id": "shore--mask_05"
+    },
+    {
+      "mask": 6,
+      "land_sides": [
+        "E",
+        "S"
+      ],
+      "asset_id": "shore--mask_06"
+    },
+    {
+      "mask": 7,
+      "land_sides": [
+        "N",
+        "E",
+        "S"
+      ],
+      "asset_id": "shore--mask_07"
+    },
+    {
+      "mask": 8,
+      "land_sides": [
+        "W"
+      ],
+      "asset_id": "shore--mask_08"
+    },
+    {
+      "mask": 9,
+      "land_sides": [
+        "N",
+        "W"
+      ],
+      "asset_id": "shore--mask_09"
+    },
+    {
+      "mask": 10,
+      "land_sides": [
+        "E",
+        "W"
+      ],
+      "asset_id": "shore--mask_10"
+    },
+    {
+      "mask": 11,
+      "land_sides": [
+        "N",
+        "E",
+        "W"
+      ],
+      "asset_id": "shore--mask_11"
+    },
+    {
+      "mask": 12,
+      "land_sides": [
+        "S",
+        "W"
+      ],
+      "asset_id": "shore--mask_12"
+    },
+    {
+      "mask": 13,
+      "land_sides": [
+        "N",
+        "S",
+        "W"
+      ],
+      "asset_id": "shore--mask_13"
+    },
+    {
+      "mask": 14,
+      "land_sides": [
+        "E",
+        "S",
+        "W"
+      ],
+      "asset_id": "shore--mask_14"
+    },
+    {
+      "mask": 15,
+      "land_sides": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "asset_id": "shore--mask_15"
+    }
+  ]
+}

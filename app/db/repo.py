@@ -1,9 +1,29 @@
 import json
+import sqlite3
+from collections.abc import Iterator
+from contextlib import contextmanager
 
 from app.db.sqlite import db_conn
 from app.db.migrations import migrate
 
 class Repo:
+    """Legacy data access.
+
+    Methods ending in `_in` take an open connection and never commit, so several of them can
+    share one `transaction()`. The plain methods open their own connection, delegate to the
+    `_in` variant, and commit, exactly as before.
+    """
+
+    @staticmethod
+    @contextmanager
+    def _connection() -> Iterator[sqlite3.Connection]:
+        conn = db_conn()
+        try:
+            yield conn
+            conn.commit()
+        finally:
+            conn.close()
+
     def init_db(self):
         conn = db_conn()
         try:
@@ -66,16 +86,24 @@ class Repo:
         conn.close()
 
     def get_profile_current_qid(self, session_id: str, child: str, quiz_type: str) -> str | None:
-        conn = db_conn()
+        with self._connection() as conn:
+            return self.get_profile_current_qid_in(conn, session_id, child, quiz_type)
+
+    def get_profile_current_qid_in(self, conn: sqlite3.Connection, session_id: str, child: str, quiz_type: str) -> str | None:
         row = conn.execute(
             "SELECT question_id FROM session_current_questions WHERE session_id = ? AND child = ? AND quiz_type = ?",
             (session_id, child, quiz_type),
         ).fetchone()
-        conn.close()
         return row[0] if row else None
 
     def set_current_qid(self, session_id: str, qid, quiz_type: str | None = None, child: str | None = None):
-        conn = db_conn()
+        with self._connection() as conn:
+            self.set_current_qid_in(conn, session_id, qid, quiz_type, child)
+
+    def set_current_qid_in(
+        self, conn: sqlite3.Connection, session_id: str, qid, quiz_type: str | None = None, child: str | None = None
+    ):
+        """Set or clear the active question in session_current_questions and the legacy sessions columns."""
         if child and quiz_type in {"math", "knowledge"}:
             if qid is None:
                 conn.execute(
@@ -107,8 +135,6 @@ class Repo:
                 "UPDATE sessions SET current_qid = NULL, current_quiz_type = NULL WHERE session_id = ?",
                 (session_id,),
             )
-        conn.commit()
-        conn.close()
 
     def inc_session_served(self, session_id: str):
         conn = db_conn()
@@ -117,13 +143,17 @@ class Repo:
         conn.close()
 
     def inc_session_answered(self, session_id: str, amount: int = 1):
-        conn = db_conn()
+        with self._connection() as conn:
+            self.inc_session_answered_in(conn, session_id, amount)
+
+    def inc_session_answered_in(self, conn: sqlite3.Connection, session_id: str, amount: int = 1):
         conn.execute("UPDATE sessions SET answered_count = answered_count + ? WHERE session_id = ?", (amount, session_id))
-        conn.commit()
-        conn.close()
 
     def inc_session_correct_earned(self, session_id: str, reward: int):
-        conn = db_conn()
+        with self._connection() as conn:
+            self.inc_session_correct_earned_in(conn, session_id, reward)
+
+    def inc_session_correct_earned_in(self, conn: sqlite3.Connection, session_id: str, reward: int):
         conn.execute(
             """
             UPDATE sessions
@@ -133,12 +163,13 @@ class Repo:
             """,
             (reward, session_id),
         )
-        conn.commit()
-        conn.close()
 
     # child_daily
     def upsert_daily(self, child: str, day: str):
-        conn = db_conn()
+        with self._connection() as conn:
+            self.upsert_daily_in(conn, child, day)
+
+    def upsert_daily_in(self, conn: sqlite3.Connection, child: str, day: str):
         conn.execute(
             """
             INSERT INTO child_daily(child, day, served_count, answered_count, correct_count, earned)
@@ -147,8 +178,13 @@ class Repo:
             """,
             (child, day),
         )
-        conn.commit()
-        conn.close()
+
+    def get_daily_answered_in(self, conn: sqlite3.Connection, child: str, day: str) -> int:
+        row = conn.execute(
+            "SELECT answered_count FROM child_daily WHERE child = ? AND day = ?",
+            (child, day),
+        ).fetchone()
+        return int(row[0] or 0) if row else 0
 
     def inc_daily_served(self, child: str, day: str):
         conn = db_conn()
@@ -160,16 +196,20 @@ class Repo:
         conn.close()
 
     def inc_daily_answered(self, child: str, day: str, amount: int = 1):
-        conn = db_conn()
+        with self._connection() as conn:
+            self.inc_daily_answered_in(conn, child, day, amount)
+
+    def inc_daily_answered_in(self, conn: sqlite3.Connection, child: str, day: str, amount: int = 1):
         conn.execute(
             "UPDATE child_daily SET answered_count = answered_count + ? WHERE child = ? AND day = ?",
             (amount, child, day),
         )
-        conn.commit()
-        conn.close()
 
     def inc_daily_correct_earned(self, child: str, day: str, reward: int):
-        conn = db_conn()
+        with self._connection() as conn:
+            self.inc_daily_correct_earned_in(conn, child, day, reward)
+
+    def inc_daily_correct_earned_in(self, conn: sqlite3.Connection, child: str, day: str, reward: int):
         conn.execute(
             """
             UPDATE child_daily
@@ -179,8 +219,6 @@ class Repo:
             """,
             (reward, child, day),
         )
-        conn.commit()
-        conn.close()
 
     def select_daily_range(self, child: str, start_day: str, end_day: str):
         conn = db_conn()

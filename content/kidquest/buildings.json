@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "content_version": 1,
+  "buildings": [
+    {
+      "id": "starter_house",
+      "content_version": 1,
+      "name": "Rumah",
+      "quest_id": "Q001",
+      "core": true,
+      "max_instances": 1,
+      "footprint": {
+        "width": 2,
+        "height": 2
+      },
+      "collision_cells": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "allowed_rotations": [
+        0
+      ],
+      "entrances": [
+        {
+          "side": "S"
+        }
+      ],
+      "anchor": {
+        "x": 1.0,
+        "y": 2
+      },
+      "shadow_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2,
+        "height": 2
+      },
+      "cost": [
+        {
+          "resource": "wood",
+          "amount": 4
+        }
+      ],
+      "interaction_type": "world_home",
+      "economic_role": "infrastructure",
+      "placement_zone": "tutorial_zone",
+      "visual_asset_key": "starter_house--base",
+      "accessible_label_template": "{name} di kolom {x}, baris {y}"
+    },
+    {
+      "id": "garden",
+      "content_version": 1,
+      "name": "Kebun",
+      "quest_id": "Q002",
+      "core": true,
+      "max_instances": 1,
+      "footprint": {
+        "width": 2,
+        "height": 2
+      },
+      "collision_cells": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "allowed_rotations": [
+        0
+      ],
+      "entrances": [
+        {
+          "side": "S"
+        }
+      ],
+      "anchor": {
+        "x": 1.0,
+        "y": 2
+      },
+      "shadow_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2,
+        "height": 2
+      },
+      "cost": [
+        {
+          "resource": "wood",
+          "amount": 2
+        }
+      ],
+      "interaction_type": "practice",
+      "economic_role": "productive",
+      "placement_zone": null,
+      "visual_asset_key": "garden--base",
+      "accessible_label_template": "{name} di kolom {x}, baris {y}"
+    },
+    {
+      "id": "bakery",
+      "content_version": 1,
+      "name": "Toko Roti",
+      "quest_id": "Q003",
+      "core": true,
+      "max_instances": 1,
+      "footprint": {
+        "width": 2,
+        "height": 2
+      },
+      "collision_cells": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "allowed_rotations": [
+        0
+      ],
+      "entrances": [
+        {
+          "side": "S"
+        }
+      ],
+      "anchor": {
+        "x": 1.0,
+        "y": 2
+      },
+      "shadow_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2,
+        "height": 2
+      },
+      "cost": [
+        {
+          "resource": "wood",
+          "amount": 3
+        },
+        {
+          "resource": "stone",
+          "amount": 1
+        }
+      ],
+      "interaction_type": "practice",
+      "economic_role": "productive",
+      "placement_zone": null,
+      "visual_asset_key": "bakery--base",
+      "accessible_label_template": "{name} di kolom {x}, baris {y}"
+    },
+    {
+      "id": "park",
+      "content_version": 1,
+      "name": "Taman",
+      "quest_id": "Q004",
+      "core": true,
+      "max_instances": 1,
+      "footprint": {
+        "width": 2,
+        "height": 2
+      },
+      "collision_cells": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 1
+        }
+      ],
+      "allowed_rotations": [
+        0
+      ],
+      "entrances": [
+        {
+          "side": "S"
+        }
+      ],
+      "anchor": {
+        "x": 1.0,
+        "y": 2
+      },
+      "shadow_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 2,
+        "height": 2
+      },
+      "cost": [
+        {
+          "resource": "wood",
+          "amount": 2
+        },
+        {
+          "resource": "stone",
+          "amount": 2
+        }
+      ],
+      "interaction_type": "practice",
+      "economic_role": "community",
+      "placement_zone": null,
+      "visual_asset_key": "park--base",
+      "accessible_label_template": "{name} di kolom {x}, baris {y}"
+    },
+    {
+      "id": "bridge",
+      "content_version": 1,
+      "name": "Jembatan",
+      "quest_id": "Q005",
+      "core": true,
+      "max_instances": 1,
+      "footprint": {
+        "width": 1,
+        "height": 2
+      },
+      "collision_cells": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        }
+      ],
+      "allowed_rotations": [
+        0
+      ],
+      "entrances": [
+        {
+          "side": "N"
+        },
+        {
+          "side": "S"
+        }
+      ],
+      "anchor": {
+        "x": 0.5,
+        "y": 2
+      },
+      "shadow_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 2
+      },
+      "cost": [
+        {
+          "resource": "wood",
+          "amount": 3
+        },
+        {
+          "resource": "stone",
+          "amount": 2
+        }
+      ],
+      "interaction_type": "inspect",
+      "economic_role": "infrastructure",
+      "placement_zone": "bridge_zone",
+      "visual_asset_key": "bridge--base",
+      "accessible_label_template": "{name} di kolom {x}, baris {y}"
+    },
+    {
+      "id": "market_stall",
+      "content_version": 1,
+      "name": "Kios Pasar",
+      "quest_id": "Q006",
+      "core": true,
+      "max_instances": 1,
+      "footprint": {
+        "width": 1,
+        "height": 1
+      },
+      "collision_cells": [
+        {
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "allowed_rotations": [
+        0
+      ],
+      "entrances": [
+        {
+          "side": "S"
+        }
+      ],
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "shadow_bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1
+      },
+      "cost": [
+        {
+          "resource": "wood",
+          "amount": 2
+        },
+        {
+          "resource": "stone",
+          "amount": 1
+        }
+      ],
+      "interaction_type": "practice",
+      "economic_role": "productive",
+      "placement_zone": null,
+      "visual_asset_key": "market_stall--base",
+      "accessible_label_template": "{name} di kolom {x}, baris {y}"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+/*
+ * KidQuest tokens (KQ-010). Aliases only: every value comes from the existing app or the approved
+ * KQ-005 component contract, so the KidQuest shell looks like the quiz it lives in.
+ *
+ * Sources (read-only, keep in sync by hand):
+ *   - static/css/base.css :root           -> --bg, --panel, --panel2, --border, --text, --muted
+ *   - static/css/home.css                 -> --kq-page, --kq-line-accent, --kq-home-*, profile card values
+ *   - static/css/quiz.css                 -> --kq-page-quiz, header/workspace/card/tab/option/key/answer values,
+ *                                            popup scrim, .profile-theme-blue / .profile-theme-purple
+ *   - static/css/stats.css                -> --kq-gold, --kq-red, --kq-green
+ *   - design/kidquest/components/README.md and prototypes/first-house/prototype.css (KQ-005 contract,
+ *     token layers 1-4, contrast notes)
+ *
+ * Token layers:
+ *   1. foundation  --bg/--panel/... and --kq-* aliases of home/quiz/stats values
+ *   2. semantic    --s-*  (dark shell; never changed by a world theme)
+ *   3. world       --t-*  neutral placeholder palette for the world canvas. It is the SAME in every
+ *                         theme: themes change the world only through the art in state.theme.assets
+ *                         (PRD 11.3), never through CSS keyed on a theme ID.
+ *   4. component   --c-*
+ */
+
+/* ---------- 1. Foundation = existing app tokens ---------- */
+:root {
+    /* static/css/base.css :root (verbatim) */
+    --bg: #070b14;
+    --panel: #0f1730;
+    --panel2: #101c3b;
+    --border: #21305b;
+    --text: #e9f0ff;
+    --muted: rgba(233, 240, 255, 0.75);
+
+    /* home.css / quiz.css / stats.css values, aliased */
+    --kq-page: #030916;                          /* home.css .home-page */
+    --kq-page-quiz: #050c1c;                     /* quiz.css .quiz-page */
+    --kq-line-accent: rgba(74, 137, 231, 0.65);  /* home.css .home-card border */
+    --kq-line-panel: rgba(61, 108, 192, 0.47);   /* quiz.css .quiz-header/.quiz-workspace border */
+    --kq-line-card: rgba(53, 88, 160, 0.42);     /* quiz.css .quiz-question border */
+    --kq-shell-top: #11234d;                     /* quiz.css rgba(17,35,77,.89) */
+    --kq-shell-bottom: #09132f;                  /* quiz.css rgba(9,19,47,.96) */
+    --kq-card-top: #243a71;                      /* quiz.css .quiz-question rgba(36,58,113,.98) */
+    --kq-card-bottom: #192a54;                   /* quiz.css .quiz-question rgba(25,42,84,.98) */
+    --kq-home-top: #0d2049;                      /* home.css .home-card rgba(13,32,73,.97) */
+    --kq-home-bottom: #07122f;                   /* home.css .home-card rgba(7,18,47,.98) */
+    --kq-tab-top: #1f3668;                       /* quiz.css .quiz-tab */
+    --kq-tab-bottom: #15274e;
+    --kq-tab-line: rgba(83, 116, 183, 0.45);
+    --kq-tab-active-top: #5a4bae;                /* quiz.css .quiz-tab.is-active */
+    --kq-tab-active-bottom: #3b3984;
+    --kq-tab-active-line: #9d80ff;
+    --kq-tab-ink: #b6c4e2;
+    --kq-option-top: #133a81;                    /* quiz.css .knowledge-option */
+    --kq-option-bottom: #0e2763;
+    --kq-option-line: rgba(73, 126, 218, 0.76);
+    --kq-selected-top: #6f39d6;                  /* quiz.css .knowledge-option.is-selected */
+    --kq-selected-bottom: #43239d;
+    --kq-selected-line: #bd7bff;
+    --kq-key-top: #263c70;                       /* quiz.css .keypad-grid button */
+    --kq-key-bottom: #1e3261;
+    --kq-answer-top: #1a3468;                    /* quiz.css .quiz-answer */
+    --kq-answer-ink: #85b9ff;
+    --kq-help-ink: #b4c2df;                      /* quiz.css .quiz-help */
+    --kq-bubble: #3e569e;                        /* quiz.css .tutor-bubble rgba(62,86,158,.63) on the card */
+    --kq-action-line: #39c9b9;                   /* quiz.css .quiz-actions button */
+    --kq-danger-top: #5a2a4d;                    /* quiz.css .quiz-actions .danger */
+    --kq-danger-bottom: #382242;
+    --kq-danger-line: #e65589;
+    --kq-gold: #ffbd16;                          /* stats.css gold value, rewards */
+    --kq-gold-light: #ffe17b;                    /* quiz.css .gift-sparkle */
+    --kq-pink: #ff89ae;                          /* quiz.css .danger span, wrong/attention */
+    --kq-red: #ff555d;                           /* stats.css .stats-action-clear */
+    --kq-mint: #55f3bf;                          /* quiz.css .quiz-popup-reward */
+    --kq-correct-line: #62f1a9;                  /* quiz.css .quiz-popup-card.is-correct */
+    --kq-green: #82d742;                         /* stats.css green value */
+    --kq-teal: #6ee6d2;                          /* quiz.css .quiz-tab > span */
+    --kq-link: #bfe3ff;                          /* base.css a / home.css .continue-button */
+    --kq-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;  /* base.css */
+
+    --f-space-1: 4px;
+    --f-space-2: 8px;
+    --f-space-3: 12px;
+    --f-space-4: 16px;
+    --f-space-6: 24px;
+    --f-space-8: 32px;
+    --f-radius-card: 24px;     /* home.css .home-card */
+    --f-radius-panel: 20px;    /* quiz.css .quiz-header / .quiz-question */
+    --f-radius-inner: 14px;    /* quiz.css .knowledge-option / .quiz-actions button */
+    --f-radius-small: 8px;     /* home.css .continue-button */
+    --f-radius-pill: 999px;
+    --f-target: 44px;
+    --f-text-body: 1rem;            /* 16px minimum child body */
+    --f-text-instruction: 1.125rem;
+    --f-text-title: 1.375rem;
+    --f-text-display: 1.75rem;
+    --f-motion-fast: 140ms;
+    --f-motion-base: 200ms;
+
+    /* World geometry (PRD §11.4). Do not change without a PRD change. */
+    --tile: clamp(38px, 10vw, 64px);
+
+    /* ---------- 2. Semantic (dark shell, theme-invariant) ---------- */
+    --s-ink: var(--text);
+    --s-ink-muted: var(--muted);
+    --s-surface: var(--kq-card-top);
+    --s-page: var(--kq-page-quiz);
+    --s-line: var(--kq-line-card);
+    --s-line-strong: var(--kq-line-accent);
+    --s-focus: var(--kq-gold-light);          /* 13.8:1 on --panel, 8.5:1 on card */
+    --s-focus-halo: #030916;
+    --s-info: #7fd0ff;                         /* 6.45:1 on card */
+    --s-info-line: #4a89e7;
+    --s-learn: var(--kq-gold-light);
+    --s-learn-line: var(--kq-gold);
+    --s-success: #9ff5c8;
+    --s-success-line: var(--kq-correct-line);
+    --s-attention: var(--kq-pink);             /* 4.92:1 on card */
+    --s-attention-ink: #ffbfcc;                /* quiz.css .quiz-message */
+    --s-disabled-ink: #9aa6c4;
+    --s-disabled-bg: #1a2547;
+    --s-overlay-scrim: rgba(1, 7, 24, 0.76);   /* quiz.css .quiz-popup */
+}
+
+/* Per-child accent (quiz.css .profile-theme-*, same names/values) */
+.profile-theme-blue {
+    --profile-card-accent: #13bbf6;
+    --profile-card-accent-soft: rgba(19, 187, 246, 0.30);
+    --profile-avatar-bg: radial-gradient(circle at 40% 25%, #4ca8ff, #1765c9 66%, #113b8d);
+    --profile-header-start: rgba(15, 98, 157, 0.36);
+    --profile-header-end: rgba(9, 53, 112, 0.28);
+    --kq-accent-text: #13bbf6;     /* 5.7:1 on the header link, 4.9:1 on card */
+    --kq-accent-solid: #12335f;    /* opaque equivalent of the header-link gradient */
+    --kq-profile-top: #10305a;     /* home.css .profile-card-blue --card-top */
+    --kq-profile-bottom: #0a1f43;
+}
+
+.profile-theme-purple {
+    --profile-card-accent: #9a64d5;
+    --profile-card-accent-soft: rgba(154, 100, 213, 0.32);
+    --profile-avatar-bg: radial-gradient(circle at 40% 25%, #a766ec, #7149c6 66%, #392b83);
+    --profile-header-start: rgba(104, 57, 172, 0.38);
+    --profile-header-end: rgba(55, 34, 117, 0.30);
+    /* #9a64d5 is 4.35:1 on --panel: fine for borders (3:1), too low for text. Text uses a lighter tint. */
+    --kq-accent-text: #c9a7ff;
+    --kq-accent-solid: #31297a;
+    --kq-profile-top: #2c2560;     /* home.css .profile-card-purple --card-top */
+    --kq-profile-bottom: #1e1b4a;
+}
+
+
+/* ---------- 3. World placeholder palette (world canvas + theme thumbnails ONLY) ----------
+ * Neutral, natural, light/earthy graybox used while a theme asset is missing (PRD 11.3 fallback 2).
+ * Values are the KQ-005 prototype's default-theme ground/water; identical for every theme. */
+.kq-app {
+    --t-ground: #cfe0b4;
+    --t-ground-alt: #c3d7a5;
+    --t-water: #a9c9d6;
+    --t-roof: #8f8a80;
+    --t-body: #b9bdb9;
+    --t-line: #3a3f3c;
+}
+
+/* World-only semantic tokens: overlays on natural ground (light). Measured on --t-ground. */
+.world-frame,
+.theme-thumb,
+.thumb {
+    --w-focus: #0a2a66;        /* 9.8:1 on ground */
+    --w-focus-halo: #ffffff;
+    --w-valid: #1c6b38;        /* 4.7:1 on ground */
+    --w-invalid: #a3301f;      /* 5.0:1 on ground */
+    --w-label-bg: #ffffff;
+    --w-label-ink: #1d2420;
+}
+
+/* ---------- 4. Component tokens ---------- */
+.kq-app {
+    --c-btn-primary-top: #177a82;     /* quiz.css teal action, darkened: white text 5.07:1 */
+    --c-btn-primary-bottom: #10626a;
+}

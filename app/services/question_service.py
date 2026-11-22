@@ -1,5 +1,5 @@
 import random
-from datetime import date
+from app import clock
 from app.config import DAILY_LIMIT
 from app.domain.question_bank import MathBankSpec, build_daily_knowledge_bank, build_daily_math_bank
 from app.services.stats_service import StatsService
@@ -17,7 +17,7 @@ class QuestionService:
 
     @staticmethod
     def today_str():
-        return date.today().isoformat()
+        return clock.today_str()
 
     @staticmethod
     def split_bank_by_difficulty(bank):
@@ -137,8 +137,16 @@ class QuestionService:
     def reserve_question(self, child: str, quiz_type: str, question_id: str) -> bool:
         return self.stats.repo.reserve_question(child, self.today_str(), quiz_type, question_id)
 
-    def evaluate_answer(self, child: str, quiz_type: str, qid: str, ans_str: str):
-        bank, _ = self.get_daily_bank(child, self.today_str(), quiz_type)
+    def evaluate_answer(self, child: str, quiz_type: str, qid: str, ans_str: str, day: str | None = None):
+        """Score an answer without writing to the database.
+
+        Reads the persisted daily bank; if it is missing, regenerates the same deterministic
+        bank in memory. Expired-data cleanup runs on question issuance, not here.
+        """
+        day = day or self.today_str()
+        bank = self.stats.repo.get_daily_question_bank(child, day, quiz_type)
+        if bank is None:
+            bank, _ = self.build_daily_bank(child, day, quiz_type)
         q = next((question for question in bank or [] if question["id"] == qid), None)
         if not q:
             return None, None, False

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- KidQuest shared overlay: Keyboard/pointer focus on a world cell. Non-colour cue: double ring (navy + white halo). -->
+  <rect x="5" y="5" width="118" height="118" rx="14" fill="none" stroke="#ffffff" stroke-width="10"/>
+  <rect x="5" y="5" width="118" height="118" rx="14" fill="none" stroke="#0a2a66" stroke-width="5"/>
+</svg>

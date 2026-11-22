@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!-- KidQuest shared overlay: Building not yet connected by road. Non-colour cue: badge with broken path + gap. -->
+  <circle cx="104" cy="104" r="18" fill="#a3301f" stroke="#ffffff" stroke-width="3"/>
+  <path d="M91 104h8M109 104h8" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <path d="M101 97l6 14" stroke="#ffe17b" stroke-width="3" stroke-linecap="round"/>
+</svg>

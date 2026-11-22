@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>KidQuest Mode Orang Tua</title>
+    <!--
+        KQ-005 low-fidelity prototype of the adult gate and adult-gated shell.
+        Separate page and separate visual shell from child mode (PRD §11.10, pipeline §4.3).
+        The PIN check here is a UI simulation only; KQ-011 implements PBKDF2 + signed cookie.
+    -->
+    <link rel="stylesheet" href="prototype.css">
+</head>
+<body class="adult">
+    <a class="skip-link" href="#main">Lewati ke konten utama</a>
+    <div id="adult-app"></div>
+    <div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+    <details class="reviewer" id="reviewer">
+        <summary>Panel peninjau prototipe (bukan bagian UI orang tua)</summary>
+        <div>
+            <p>PIN prototipe: <strong>2468</strong>. Pemeriksaan PIN di sini hanya simulasi tampilan.</p>
+            <button class="btn btn-secondary" data-rev="expire">Simulasikan sesi orang tua habis</button>
+            <button class="btn btn-secondary" data-rev="economy">Ganti: ekonomi diaktifkan (simulasi)</button>
+        </div>
+    </details>
+
+    <script src="parent.js"></script>
+</body>
+</html>

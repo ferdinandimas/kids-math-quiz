@@ -22,7 +22,8 @@
                 <strong id="childName">{{ child }}</strong>
                 <span>Tingkat: <b id="level">{{ level }}</b></span>
             </div>
-            <a class="header-stats-link" href="/stats">Lihat Statistik</a>
+            <a class="header-stats-link" href="/stats">Lihat Statistik</a>{% if kidquest_entry %}
+            <a class="header-stats-link" href="/kidquest" data-testid="kidquest-entry">{{ kidquest_entry }}</a>{% endif %}
         </div>
 
         <section class="today-card" aria-label="Statistik hari ini">

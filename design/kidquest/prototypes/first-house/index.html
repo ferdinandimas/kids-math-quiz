@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>KidQuest Prototipe Rumah Pertama</title>
+    <!--
+        KQ-005 low-fidelity clickable prototype. Graybox only.
+        Self-contained: no CDN, no network, runs from file://.
+        Simulates server-authoritative state in localStorage; it is not an API client.
+    -->
+    <link rel="stylesheet" href="prototype.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+    <div id="app" class="kq-app" data-theme="perkampungan" data-view="entry">
+        <!-- Rendered by child.js -->
+    </div>
+
+    <div id="live" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+    <div id="dialog-root"></div>
+
+    <details class="reviewer" id="reviewer">
+        <summary>Panel peninjau prototipe (bukan bagian UI anak)</summary>
+        <div id="reviewer-body"></div>
+    </details>
+
+    <script src="child.js"></script>
+</body>
+</html>
